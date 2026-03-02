@@ -26,8 +26,7 @@ fund cloud credits.
 1. Copy the `env-rstudio-multiomics` project into your new project.
 
 1. Run a 
-[Data Studio analysis](https://docs.cavatica.org/docs/run-an-analysis-using-data-cruncher).
-by clicking the **Data Studio** tab.
+[Data Studio analysis](https://docs.cavatica.org/docs/run-an-analysis-using-data-cruncher) by clicking the **Data Studio** tab.
   - Click **Create new analysis**.
   - Select **RStudio**.
   - Use the default **Environment Setup**. You can read more about default and
