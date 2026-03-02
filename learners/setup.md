@@ -27,6 +27,9 @@ fund cloud credits.
 
 1. Run a 
 [Data Studio analysis](https://docs.cavatica.org/docs/run-an-analysis-using-data-cruncher) by clicking the **Data Studio** tab.
+
+1. **Start** the `Motrpac-metaboAnalystR` analysis. This will take a few minutes to launch a machine instance. While it starts, notice that the **Environment** is RStudio.
+
   - Click **Create new analysis**.
   - Select **RStudio**.
   - Use the default **Environment Setup**. You can read more about default and
