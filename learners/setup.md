@@ -2,8 +2,48 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
+For this lesson, you will be working in the R programming language and the 
+RStudio development environment on the data analysis and sharing platform 
+[CAVATICA](https://www.cavatica.org/).
+
+## Setup
+
+### Access CAVATICA
+
+1. [Sign up for a free CAVATICA account](https://docs.cavatica.org/docs/sign-up-for-cavatica).
+
+1. Request your free pilot fund cloud credits by 
+[contacting CAVATICA support](https://docs.cavatica.org/docs/getting-started).
+
+1. [Create a project](https://docs.cavatica.org/docs/quickstart#create-a-project). Give it a good descriptive name like `r-multiomics`.
+
+1. For **Billing group**, select `Pilot Funds` if you have received free pilot 
+fund cloud credits.
+
+1. Under **Advanced settings**, change the default setting to `Allow network access`.
+![](episodes/fig/block-network-access.png)
+
+1. Copy the `env-rstudio-multiomics` project into your new project.
+
+1. Run a 
+[Data Studio analysis](https://docs.cavatica.org/docs/run-an-analysis-using-data-cruncher).
+by clicking the **Data Studio** tab.
+  - Click **Create new analysis**.
+  - Select **RStudio**.
+  - Use the default **Environment Setup**. You can read more about default and
+  other available
+  [environments and libraries for RStudio](https://docs.cavatica.org/docs/about-libraries-in-a-data-cruncher-analysis#rstudio).
+
+## Project Setup
+
+Before you begin, determine your working directory (`get(wd)` and `set(wd)`), and 
+create two new folders within your preferred working directory entitled `data`
+and `results`. You can copy and paste the following commands into the R console.
+
+```r
+dir.create("data")
+dir.create("results")
+```
 
 ## Data Sets
 
