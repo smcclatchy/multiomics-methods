@@ -36,7 +36,9 @@ Most \*-omics data is derived from raw measurements which are heavily processed 
 suppressPackageStartupMessages(library(tidyverse)) 
 suppressPackageStartupMessages(library(ggrepel))
 suppressPackageStartupMessages(library(pcaMethods))
+```
 
+```{r eval=FALSE}
 # Base project directory.
 base_dir  = '/sbgenomics/workspace'
 
@@ -59,9 +61,32 @@ prot_dir  = file.path(data_dir, 'protein')
 prot_files = dir(path = prot_dir, full.names = TRUE) 
 ```
 
+```{r echo=FALSE}
+# Base project directory.
+base_dir  = 'sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+# Metadata directory.
+meta_file = file.path(data_dir, 'motrpac_metadata.csv')  
+
+# RNA file directory.
+rna_dir   = file.path(data_dir, 'rna')  
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = file.path(data_dir, 'protein')  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE) 
+```
+
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A "metadata" file contains information about the data. For example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A "metadata" file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
 
 ```{r}
 meta = read_csv(meta_file, col_types = 'cccccc')
