@@ -1,20 +1,7 @@
 ---
 title: "Omics QC"
-execute:
-  working-dir: ../
-  warning: false
-  message: false
-format:
-  html:
-    code-fold: false
-    code-line-numbers: true
-    page-layout: full
-    fig-width: 10
-    fig-height: 8
-    persist: true
-    embed-resources: true
-resources:
-    ../assets/slides
+teaching: 10
+exercises: 2
 ---
 
 ::: questions
