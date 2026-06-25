@@ -245,6 +245,30 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="multiomics-data-integration.html">2. Using RMarkdown</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="data_qc.html">3. Omics QC</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -301,7 +325,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Using RMarkdown</a></p>
 <hr>
-<p>Last updated on 2026-06-23 |
+<p>Last updated on 2026-06-25 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -382,7 +406,7 @@ reinforce the objectives.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -411,7 +435,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -487,7 +511,714 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section>
+</section></section><section id="aio-multiomics-data-integration"><p>Content from <a href="multiomics-data-integration.html">Using RMarkdown</a></p>
+<hr>
+<p>Last updated on 2026-06-25 |
+
+        <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/multiomics-data-integration.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do you write a lesson using R Markdown and
+<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Explain how to use markdown with the new lesson template</li>
+<li>Demonstrate how to include pieces of code, figures, and nested
+challenge blocks</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Use <code>.md</code> files for episodes when you want static
+content</li>
+<li>Use <code>.Rmd</code> files for episodes when you need to generate
+output</li>
+<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
+with your lesson</li>
+<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
+locally</li>
+</ul>
+</div>
+</div>
+</div></section><section id="aio-data_qc"><p>Content from <a href="data_qc.html">Omics QC</a></p>
+<hr>
+<p>Last updated on 2026-06-25 |
+
+        <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/data_qc.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do I determine if an omics data set is of good quality?</li>
+<li>How do I identify samples that may have technical issues?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>Read in transcript and protein data and format it for analysis.</li>
+<li>Transform and standardize data to perform principal component
+analysis (PCA).</li>
+<li>Interpret a PCA plot to identify potential outlier samples.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="omics-qc">*-omics QC<a class="anchor" aria-label="anchor" href="#omics-qc"></a>
+</h2>
+<hr class="half-width">
+<p>Most *-omics data is derived from raw measurements which are heavily
+processed to produce a matrix of measurements with “features”
+(i.e. transcripts, proteins, metabolites, etc.) in rows and samples in
+columns. Each technology has its own set of best practices for quality
+control and normalization. In this lesson, we will be working with
+<em>processed</em> data, which has gone through these procedures.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">suppressPackageStartupMessages</span><span class="op">(</span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span><span class="op">)</span> </span>
+<span><span class="fu">suppressPackageStartupMessages</span><span class="op">(</span><span class="kw">library</span><span class="op">(</span><span class="va">ggrepel</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error in `library()`:
+! there is no package called 'ggrepel'</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">suppressPackageStartupMessages</span><span class="op">(</span><span class="kw">library</span><span class="op">(</span><span class="va">pcaMethods</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error in `library()`:
+! there is no package called 'pcaMethods'</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Base project directory.</span></span>
+<span><span class="va">base_dir</span>  <span class="op">=</span> <span class="st">'/sbgenomics/workspace'</span></span>
+<span></span>
+<span><span class="co"># Data directory.</span></span>
+<span><span class="va">data_dir</span>  <span class="op">=</span> <span class="fu">file.path</span><span class="op">(</span><span class="va">base_dir</span>, <span class="st">'data'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Metadata directory.</span></span>
+<span><span class="va">meta_file</span> <span class="op">=</span> <span class="fu">file.path</span><span class="op">(</span><span class="va">data_dir</span>, <span class="st">'motrpac_metadata.csv'</span><span class="op">)</span>  </span>
+<span></span>
+<span><span class="co"># RNA file directory.</span></span>
+<span><span class="va">rna_dir</span>   <span class="op">=</span> <span class="fu">file.path</span><span class="op">(</span><span class="va">data_dir</span>, <span class="st">'rna'</span><span class="op">)</span>  </span>
+<span></span>
+<span><span class="co"># RNA files.</span></span>
+<span><span class="va">rna_files</span> <span class="op">=</span> <span class="fu">dir</span><span class="op">(</span>path <span class="op">=</span> <span class="va">rna_dir</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Protein file directory.</span></span>
+<span><span class="va">prot_dir</span>  <span class="op">=</span> <span class="fu">file.path</span><span class="op">(</span><span class="va">data_dir</span>, <span class="st">'protein'</span><span class="op">)</span>  </span>
+<span></span>
+<span><span class="co"># Protein files.</span></span>
+<span><span class="va">prot_files</span> <span class="op">=</span> <span class="fu">dir</span><span class="op">(</span>path <span class="op">=</span> <span class="va">prot_dir</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="sample-metadata">Sample Metadata<a class="anchor" aria-label="anchor" href="#sample-metadata"></a>
+</h3>
+<p>First, we will read in the sample metadata file. A “metadata” file
+contains information about the data, for example, the sex, age, and type
+of sample. In this case, we will extract the sex and treatment groups
+for the rats.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">meta</span> <span class="op">=</span> <span class="fu">read_csv</span><span class="op">(</span><span class="va">meta_file</span>, col_types <span class="op">=</span> <span class="st">'cccccc'</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! 'sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
+  current working directory:
+  '/__w/multiomics-methods/multiomics-methods/site/built'.</code></pre>
+</div>
+<p>What are the dimensions of the metadata?</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">dim</span><span class="op">(</span><span class="va">meta</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'meta' not found</code></pre>
+</div>
+<p>Next, we will look at the first few rows of the sample metadata.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">head</span><span class="op">(</span><span class="va">meta</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'meta' not found</code></pre>
+</div>
+<p>There are several columns with cryptic numbers in them. The ‘pid’
+column is a unique number for each rat. The ‘bid’ column is unique
+numeric value for a batch of rats in a cohort. The ‘viallabel’ column is
+a unique number for a sample vial. The sex, age, and grp columns contain
+other information about each rat.</p>
+<p>How many rats do we have in each group?</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">meta</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">pid</span>, <span class="va">sex</span>, <span class="va">age</span>, <span class="va">grp</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">distinct</span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">sex</span>, <span class="va">age</span>, <span class="va">grp</span><span class="op">)</span> <span class="op">|&gt;</span>        </span>
+<span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">sex</span>, values_from <span class="op">=</span> <span class="va">n</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'meta' not found</code></pre>
+</div>
+<p>There are about 15 rats per treatment group. Also, it appears that we
+only have data for the 6 month old rats, so we will not use age as a
+factor in our analysis.</p>
+</div>
+<div class="section level3">
+<h3 id="transcript-matrix">Transcript Matrix<a class="anchor" aria-label="anchor" href="#transcript-matrix"></a>
+</h3>
+<p>We have reformatted some of the MoTrPAC transcript files to make them
+easier to read in for this tutorial. We have converted them to numeric
+matrices and saved them in <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS%5D%5BRDS%5D" class="external-link"><span class="math display">\[RDS\]</span></a>(<a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS" class="external-link uri">https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS</a>)
+format. RDS is a binary, compressed format for storing R objects.</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">tissue</span> <span class="op">=</span> <span class="st">'kidney'</span></span>
+<span></span>
+<span><span class="va">i</span> <span class="op">=</span> <span class="fu">str_detect</span><span class="op">(</span><span class="va">rna_files</span>, <span class="va">tissue</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">rna</span> <span class="op">=</span> <span class="fu">readRDS</span><span class="op">(</span><span class="va">rna_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error in `gzfile()`:
+! invalid 'description' argument</code></pre>
+</div>
+<p>What are the dimensions of the RNA matrix?</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">dim</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'rna' not found</code></pre>
+</div>
+<p>The data has about 16,000 rows and 50 columns. Let’s look at the top
+of the file.</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">rna</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'rna' not found</code></pre>
+</div>
+<p>From the top of the RNA file, you can see that genes are in rows. The
+rownames which look like “ENSRNOG00000000012” are Ensembl rat gene IDs.
+The columns contain the samples. This is a traditional omics data format
+which is transposed from the traditional statistics table format in
+which samples are in rows and observations are in columns.</p>
+<div id="challenge-1-what-kind-of-data-is-in-the-rna-object" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-what-kind-of-data-is-in-the-rna-object" class="callout-inner">
+<h3 class="callout-title">Challenge 1: What kind of data is in the ‘rna’
+object?</h3>
+<div class="callout-content">
+<p>Click on the “rna” data object in the Environment tab on the right
+side of your screen. Look at the numbers in the data matrix. Do we have
+RNASeq counts? Make a histogram of the data to look at it’s
+distribution. Then make a boxplot of the RNA data. How do you think that
+the data has been transformed and processed?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The data is <em>NOT</em> RNASeq counts because it does not contain
+integers. It has gone through some type of processing or normalization.
+Since all of the columns sum to about the same value and the data ranges
+between -3 and 16, it has probably been log-transformed and library-size
+adjusted.</p>
+<div class="codewrapper sourceCode" id="cb20">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">hist</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span></span>
+<span><span class="fu">boxplot</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Next, let’s check whether we have any missing data. We will do this
+by summing the number of elements in the data matrix that are NA.</p>
+<div class="codewrapper sourceCode" id="cb21">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">sum</span><span class="op">(</span><span class="fu">is.na</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'rna' not found</code></pre>
+</div>
+<p>Since the sum of NA values is 0, we have no missing data.</p>
+<p>Next, we will get the sample metadata for the cortex samples. We will
+filter the larger sample metadata file and align the sample IDs between
+the metadata and the transcript data.</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">meta_rna</span> <span class="op">=</span> <span class="va">meta</span><span class="op">[</span><span class="fu">match</span><span class="op">(</span><span class="fu">colnames</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span>, <span class="va">meta</span><span class="op">$</span><span class="va">viallabel</span><span class="op">)</span>,<span class="op">]</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'meta' not found</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb25">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">all</span><span class="op">(</span><span class="fu">colnames</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span> <span class="op">==</span> <span class="va">meta_rna</span><span class="op">$</span><span class="va">viallabel</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'rna' not found</code></pre>
+</div>
+<p>Now that we have meaningful group identifiers for each sample, we
+will calculate the principal components of the expression counts. R has
+several functions which calculate principal components, but we will use
+the “pcaMethods” package. There are many different methods to compute
+the principal components in the pcaMethods package. You can use the
+<code>listPcaMethods()</code> function to list all of them. Here, we
+will used hte ‘svd’ method, which uses singular value decomposition to
+calculate the principal components. We will also standardize the columns
+to make the mean equal to zero and the standard deviation equal to
+one.</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">pca_rna</span> <span class="op">=</span> <span class="fu">pcaMethods</span><span class="fu">::</span><span class="fu">pca</span><span class="op">(</span>object <span class="op">=</span> <span class="va">rna</span>,</span>
+<span>                          nPcs   <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>                          method <span class="op">=</span> <span class="st">'svd'</span>,</span>
+<span>                          scale  <span class="op">=</span> <span class="st">'uv'</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error in `loadNamespace()`:
+! there is no package called 'pcaMethods'</code></pre>
+</div>
+<p>Let’s look at the PCA summary.</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">summary</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'pca_rna' not found</code></pre>
+</div>
+<p>From the summary of the PCA, we can see that PC1 accounts for the
+overwhelming majority of the variance. This is a large amount of
+variance for the first PC to explain and it may indicate something
+unusual about the data.</p>
+<p>Let’s get the principal components from the PCA object. This is
+stored in the “loadings” slot.</p>
+<div class="codewrapper sourceCode" id="cb31">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ldngs</span> <span class="op">=</span> <span class="fu">data.frame</span><span class="op">(</span><span class="fu">loadings</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>          <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">'viallabel'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>          <span class="fu">left_join</span><span class="op">(</span><span class="va">meta_rna</span>, by <span class="op">=</span> <span class="st">'viallabel'</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'pca_rna' not found</code></pre>
+</div>
+<p>Then we will plot the first two principal components, colored and
+shaped by sex and experimental group.</p>
+<div class="codewrapper sourceCode" id="cb33">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, color <span class="op">=</span> <span class="va">sex</span>, shape <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PCA of '</span>, <span class="va">tissue</span>, <span class="st">' Expression'</span><span class="op">)</span>,</span>
+<span>       x     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC1 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span>,</span>
+<span>       y     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC2 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'ldngs' not found</code></pre>
+</div>
+<p>The plot above shows PC1 on the X-axis and PC2 on the Y-axis. Each
+point represents one rat’s kidney expression value and is colored by sex
+and shaped by experimental group. Note that PC1 accounts for 97% of the
+variance, which is high.</p>
+<div id="challenge-2-what-do-you-think-about-this-plot" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-what-do-you-think-about-this-plot" class="callout-inner">
+<h3 class="callout-title">Challenge 2: What do you think about this
+plot?</h3>
+<div class="callout-content">
+<p>Look at the PCA plot. What differences do you see between the sex and
+treatment groups? Are there any odd points?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>The data separate by sex on the PC2 axis. At this resolution, there
+are not large differences between treatment groups. There is one point,
+a male in the 2 week group, which is far from the other points on the
+PC1 axis.</p>
+</div>
+</div>
+</div>
+</div>
+<p>What should we do about the outlier data point? Why might one sample
+be far from the others? Is it a real data point that should be left in
+the data set? Should we remove it? How can we start looking into whether
+this is a data point that we should ask the investigators about?</p>
+<p>First, let’s get the sample ID for the outlier sample.</p>
+<div class="codewrapper sourceCode" id="cb35">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">outlier</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>             <span class="fu">filter</span><span class="op">(</span><span class="va">PC1</span> <span class="op">&lt;</span> <span class="fl">0.136</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'ldngs' not found</code></pre>
+</div>
+<p>Then, let’s add the vial label to the plot.</p>
+<div class="codewrapper sourceCode" id="cb37">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, color <span class="op">=</span> <span class="va">sex</span>, shape <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_label_repel</span><span class="op">(</span>data <span class="op">=</span> <span class="va">outlier</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, label <span class="op">=</span> <span class="va">viallabel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PCA of '</span>, <span class="va">tissue</span>, <span class="st">' Expression'</span><span class="op">)</span>,</span>
+<span>       x     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC1 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span>,</span>
+<span>       y     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC2 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'ldngs' not found</code></pre>
+</div>
+<p>Do we have any other data that we could use to figure out whether the
+kidney data is “good” or not? Perhaps the rat has kidney disease and
+really is quite different from the other rats. Or perhaps the rat has an
+infection. We can’t remove this data point on our own, but we can gather
+evidence to present to the investigator to make a decision.</p>
+<p>We have transcript data in other tissues and protein data in the same
+tissues. What if we look at the other data and see if the same rat is an
+outlier in other data sets?</p>
+<p>Let’s gather all of the code together to read in the transcript data
+for one tissue, get the sample metadata, and make a PCA plot.</p>
+<div class="codewrapper sourceCode" id="cb39">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Get the viallabel for the outlier sample so that we can plot it.</span></span>
+<span><span class="va">outlier_vial</span> <span class="op">=</span> <span class="va">outlier</span><span class="op">$</span><span class="va">viallabel</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Get the index of the RNA file for the current tissue.</span></span>
+<span><span class="va">i</span> <span class="op">=</span> <span class="fu">str_detect</span><span class="op">(</span><span class="va">rna_files</span>, <span class="va">tissue</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get the tissue.</span></span>
+<span><span class="va">tissue</span> <span class="op">=</span> <span class="fu">str_replace_all</span><span class="op">(</span><span class="fu">basename</span><span class="op">(</span><span class="va">rna_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="st">'_rna_log_norm_cpm\\.rds$'</span>, <span class="st">''</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Read in the transcript data.</span></span>
+<span><span class="va">rna</span> <span class="op">=</span> <span class="fu">readRDS</span><span class="op">(</span><span class="va">rna_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get the sample metadata.</span></span>
+<span><span class="va">meta_rna</span> <span class="op">=</span> <span class="va">meta</span><span class="op">[</span><span class="fu">match</span><span class="op">(</span><span class="fu">colnames</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span>, <span class="va">meta</span><span class="op">$</span><span class="va">viallabel</span><span class="op">)</span>,<span class="op">]</span></span>
+<span></span>
+<span><span class="co"># Perform PCA.</span></span>
+<span><span class="va">pca_rna</span> <span class="op">=</span> <span class="fu">pcaMethods</span><span class="fu">::</span><span class="fu">pca</span><span class="op">(</span>object <span class="op">=</span> <span class="va">rna</span>,</span>
+<span>                          nPcs   <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>                          method <span class="op">=</span> <span class="st">'svd'</span>,</span>
+<span>                          scale  <span class="op">=</span> <span class="st">'uv'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Get the loadings from the PCA.</span></span>
+<span><span class="va">ldngs</span> <span class="op">=</span> <span class="fu">data.frame</span><span class="op">(</span><span class="fu">loadings</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>          <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">'viallabel'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>          <span class="fu">left_join</span><span class="op">(</span><span class="va">meta_rna</span>, by <span class="op">=</span> <span class="st">'viallabel'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Plot PC1 &amp; PC2. </span></span>
+<span><span class="va">p</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>      <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, color <span class="op">=</span> <span class="va">sex</span>, shape <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu">geom_label_repel</span><span class="op">(</span>data <span class="op">=</span> <span class="va">outlier</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, label <span class="op">=</span> <span class="va">viallabel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PCA of '</span>, <span class="va">tissue</span>, <span class="st">' Expression'</span><span class="op">)</span>,</span>
+<span>           x     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC1 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span>,</span>
+<span>           y     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC2 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu">theme</span><span class="op">(</span>text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></code></pre>
+</div>
+
+</div>
+</section><div class="section level1">
+<h1 id="transcript-pca-plots">Transcript PCA Plots<a class="anchor" aria-label="anchor" href="#transcript-pca-plots"></a>
+</h1>
+<div class="codewrapper sourceCode" id="cb40">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Get the pid for the outlier sample so that we can plot it.</span></span>
+<span><span class="va">outlier_pid</span> <span class="op">=</span> <span class="va">outlier</span><span class="op">$</span><span class="va">pid</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'outlier' not found</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb42">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu">seq_along</span><span class="op">(</span><span class="va">rna_files</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="co"># Get the tissue.</span></span>
+<span>  <span class="va">tissue</span> <span class="op">=</span> <span class="fu">str_replace_all</span><span class="op">(</span><span class="fu">basename</span><span class="op">(</span><span class="va">rna_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="st">'_rna_log_norm_cpm\\.rds$'</span>, <span class="st">''</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Read in the transcript data.</span></span>
+<span>  <span class="va">rna</span> <span class="op">=</span> <span class="fu">readRDS</span><span class="op">(</span><span class="va">rna_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># Get the sample metadata.</span></span>
+<span>  <span class="va">meta_rna</span> <span class="op">=</span> <span class="va">meta</span><span class="op">[</span><span class="fu">match</span><span class="op">(</span><span class="fu">colnames</span><span class="op">(</span><span class="va">rna</span><span class="op">)</span>, <span class="va">meta</span><span class="op">$</span><span class="va">viallabel</span><span class="op">)</span>,<span class="op">]</span></span>
+<span></span>
+<span>  <span class="co"># Perform PCA.</span></span>
+<span>  <span class="va">pca_rna</span> <span class="op">=</span> <span class="fu">pcaMethods</span><span class="fu">::</span><span class="fu">pca</span><span class="op">(</span>object <span class="op">=</span> <span class="va">rna</span>,</span>
+<span>                            nPcs   <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>                            method <span class="op">=</span> <span class="st">'svd'</span>,</span>
+<span>                            scale  <span class="op">=</span> <span class="st">'uv'</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Get the loadings.</span></span>
+<span>  <span class="va">ldngs</span> <span class="op">=</span> <span class="fu">data.frame</span><span class="op">(</span><span class="fu">loadings</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">'viallabel'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">left_join</span><span class="op">(</span><span class="va">meta_rna</span>, by <span class="op">=</span> <span class="st">'viallabel'</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Get the outlier sample in this data set.</span></span>
+<span>  <span class="va">outlier</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu">filter</span><span class="op">(</span><span class="va">pid</span> <span class="op">==</span> <span class="va">outlier_pid</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># Plot PC1 &amp; PC2.</span></span>
+<span>  <span class="va">p</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>        <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, color <span class="op">=</span> <span class="va">sex</span>, shape <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="fu">geom_label_repel</span><span class="op">(</span>data <span class="op">=</span> <span class="va">outlier</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, label <span class="op">=</span> <span class="va">viallabel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PCA of '</span>, <span class="va">tissue</span>, <span class="st">' Expression'</span><span class="op">)</span>,</span>
+<span>             x     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC1 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span>,</span>
+<span>             y     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC2 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="fu">theme</span><span class="op">(</span>text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="fu">print</span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span>
+<span></span>
+<span><span class="op">}</span> <span class="co"># for(i)</span></span></code></pre>
+</div>
+</div>
+<div class="section level1">
+<h1 id="protein-pca-plots">Protein PCA Plots<a class="anchor" aria-label="anchor" href="#protein-pca-plots"></a>
+</h1>
+<div class="codewrapper sourceCode" id="cb43">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Get the pid for the outlier sample so that we can plot it.</span></span>
+<span><span class="va">outlier_pid</span> <span class="op">=</span> <span class="va">outlier</span><span class="op">$</span><span class="va">pid</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error:
+! object 'outlier' not found</code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb45">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu">seq_along</span><span class="op">(</span><span class="va">prot_files</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="co"># Get the tissue.</span></span>
+<span>  <span class="va">tissue</span> <span class="op">=</span> <span class="fu">str_replace_all</span><span class="op">(</span><span class="fu">basename</span><span class="op">(</span><span class="va">prot_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="st">'_prot_norm_lr\\.rds$'</span>, <span class="st">''</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Read in the protein data.</span></span>
+<span>  <span class="va">prot</span> <span class="op">=</span> <span class="fu">readRDS</span><span class="op">(</span><span class="va">prot_files</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># Get the sample metadata.</span></span>
+<span>  <span class="va">meta_prot</span> <span class="op">=</span> <span class="va">meta</span><span class="op">[</span><span class="fu">match</span><span class="op">(</span><span class="fu">colnames</span><span class="op">(</span><span class="va">prot</span><span class="op">)</span>, <span class="va">meta</span><span class="op">$</span><span class="va">viallabel</span><span class="op">)</span>,<span class="op">]</span></span>
+<span></span>
+<span>  <span class="co"># Perform PCA.</span></span>
+<span>  <span class="va">pca_prot</span> <span class="op">=</span> <span class="fu">pcaMethods</span><span class="fu">::</span><span class="fu">pca</span><span class="op">(</span>object <span class="op">=</span> <span class="va">prot</span>,</span>
+<span>                             nPcs   <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>                             method <span class="op">=</span> <span class="st">'nipals'</span>,</span>
+<span>                             scale  <span class="op">=</span> <span class="st">'uv'</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Get the loadings.</span></span>
+<span>  <span class="va">ldngs</span> <span class="op">=</span> <span class="fu">data.frame</span><span class="op">(</span><span class="fu">loadings</span><span class="op">(</span><span class="va">pca_prot</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">rownames_to_column</span><span class="op">(</span><span class="st">'viallabel'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">left_join</span><span class="op">(</span><span class="va">meta_prot</span>, by <span class="op">=</span> <span class="st">'viallabel'</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="co"># Get the outlier sample in this data set.</span></span>
+<span>  <span class="va">outlier</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu">filter</span><span class="op">(</span><span class="va">pid</span> <span class="op">==</span> <span class="va">outlier_pid</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="co"># Plot PC1 &amp; PC2.</span></span>
+<span>  <span class="va">p</span> <span class="op">=</span> <span class="va">ldngs</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, color <span class="op">=</span> <span class="va">sex</span>, shape <span class="op">=</span> <span class="va">grp</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_point</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">geom_label_repel</span><span class="op">(</span>data <span class="op">=</span> <span class="va">outlier</span>, <span class="fu">aes</span><span class="op">(</span><span class="va">PC1</span>, <span class="va">PC2</span>, label <span class="op">=</span> <span class="va">viallabel</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu">labs</span><span class="op">(</span>title <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="va">tissue</span>, <span class="st">' Protein'</span><span class="op">)</span>,</span>
+<span>             x     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC1 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span>,</span>
+<span>             y     <span class="op">=</span> <span class="fu">str_c</span><span class="op">(</span><span class="st">'PC2 ('</span>, <span class="fu">round</span><span class="op">(</span><span class="va">pca_rna</span><span class="op">@</span><span class="va">R2</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">'%)'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>        <span class="fu">theme</span><span class="op">(</span>text <span class="op">=</span> <span class="fu">element_text</span><span class="op">(</span>size <span class="op">=</span> <span class="fl">18</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span>  <span class="fu">print</span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="op">}</span> <span class="co"># for(i)</span></span></code></pre>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Omics data are so large that they need to be summarized
+concisely.</li>
+<li>Principal component analysis is a linear dimensionality reduction
+method which allows omics data to be visualized.</li>
+<li>PCA plots can be quick and effective ways to identify trouble in
+omics data before proceeding with analysis.</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div></section>
 </div>
     </main>
 </div>
@@ -537,8 +1268,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "dateCreated": "2026-03-02",
-  "dateModified": "2026-06-23",
-  "datePublished": "2026-06-23"
+  "dateModified": "2026-06-25",
+  "datePublished": "2026-06-25"
 }
 
   </script><script>
