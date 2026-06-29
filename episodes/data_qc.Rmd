@@ -17,7 +17,10 @@ exercises: 2
 
 ## \*-omics QC
 
-Most \*-omics data is derived from raw measurements which are heavily processed to produce a matrix of measurements with "features" (i.e. transcripts, proteins, metabolites, etc.) in rows and samples in columns. Each technology has its own set of best practices for quality control and normalization. In this lesson, we will be working with *processed* data, which has gone through these procedures.
+Most \*-omics data is derived from raw measurements which are heavily processed 
+to produce a matrix of measurements with "features" (i.e. transcripts, proteins, metabolites, etc.) in rows and samples in columns. Each technology has its own 
+set of best practices for quality control and normalization. In this lesson, we 
+will be working with *processed* data, which has gone through these procedures.
 
 ```{r warning=FALSE}
 suppressPackageStartupMessages(library(tidyverse)) 
@@ -73,7 +76,9 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A "metadata" file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A "metadata" file contains 
+information about the data, for example, the sex, age, and type of sample. In 
+this case, we will extract the sex and treatment groups for the rats.
 
 ```{r}
 meta = read_csv(meta_file, col_types = 'cccccc')
@@ -91,7 +96,10 @@ Next, we will look at the first few rows of the sample metadata.
 head(meta)
 ```
 
-There are several columns with cryptic numbers in them. The 'pid' column is a unique number for each rat. The 'bid' column is unique numeric value for a batch of rats in a cohort. The 'viallabel' column is a unique number for a sample vial. The sex, age, and grp columns contain other information about each rat.
+There are several columns with cryptic numbers in them. The 'pid' column is a 
+unique number for each rat. The 'bid' column is unique numeric value for a batch 
+of rats in a cohort. The 'viallabel' column is a unique number for a sample 
+vial. The sex, age, and grp columns contain other information about each rat.
 
 How many rats do we have in each group?
 
@@ -103,11 +111,15 @@ meta |>
   pivot_wider(names_from = sex, values_from = n)
 ```
 
-There are about 15 rats per treatment group. Also, it appears that we only have data for the 6 month old rats, so we will not use age as a factor in our analysis.
+There are about 15 rats per treatment group. Also, it appears that we only have 
+data for the 6 month old rats, so we will not use age as a factor in our 
+analysis.
 
 ### Transcript Matrix
 
-We have reformatted some of the MoTrPAC transcript files to make them easier to read in for this tutorial. We have converted them to numeric matrices and saved them in [\[RDS\]](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS%5D%5BRDS%5D)(https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS) format. RDS is a binary, compressed format for storing R objects.
+We have reformatted some of the MoTrPAC transcript files to make them easier to 
+read in for this tutorial. We have converted them to numeric matrices and saved 
+them in [\[RDS\]](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS%5D%5BRDS%5D)(https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS) format. RDS is a binary, compressed format for storing R objects.
 
 ```{r}
 tissue = 'kidney'
@@ -123,21 +135,30 @@ What are the dimensions of the RNA matrix?
 dim(rna)
 ```
 
-The data has about 16,000 rows and 50 columns. Let's look at the top of the file.
+The data has about 16,000 rows and 50 columns. Let's look at the top of the 
+file.
 
 ```{r}
 rna[1:5,1:5]
 ```
 
-From the top of the RNA file, you can see that genes are in rows. The rownames which look like "ENSRNOG00000000012" are Ensembl rat gene IDs. The columns contain the samples. This is a traditional omics data format which is transposed from the traditional statistics table format in which samples are in rows and observations are in columns.
+From the top of the RNA file, you can see that genes are in rows. The rownames 
+which look like "ENSRNOG00000000012" are Ensembl rat gene IDs. The columns 
+contain the samples. This is a traditional omics data format which is transposed 
+from the traditional statistics table format in which samples are in rows and observations are in columns.
 
 ::::::::::::::::: challenge
 ## Challenge 1: What kind of data is in the 'rna' object?
 
-Click on the "rna" data object in the Environment tab on the right side of your screen. Look at the numbers in the data matrix. Do we have RNASeq counts? Make a histogram of the data to look at it's distribution. Then make a boxplot of the RNA data. How do you think that the data has been transformed and processed?
+Click on the "rna" data object in the Environment tab on the right side of your 
+screen. Look at the numbers in the data matrix. Do we have RNASeq counts? Make a histogram of the data to look at it's distribution. Then make a boxplot of the 
+RNA data. How do you think that the data has been transformed and processed?
 
 ::: solution
-The data is *NOT* RNASeq counts because it does not contain integers. It has gone through some type of processing or normalization. Since all of the columns sum to about the same value and the data ranges between -3 and 16, it has probably been log-transformed and library-size adjusted.
+The data is *NOT* RNASeq counts because it does not contain integers. It has 
+gone through some type of processing or normalization. Since all of the columns 
+sum to about the same value and the data ranges between -3 and 16, it has 
+probably been log-transformed and library-size adjusted.
 
 ``` r
 hist(rna)
@@ -146,7 +167,8 @@ boxplot(rna)
 :::
 :::::::::::::::::
 
-Next, let's check whether we have any missing data. We will do this by summing the number of elements in the data matrix that are NA.
+Next, let's check whether we have any missing data. We will do this by summing 
+the number of elements in the data matrix that are NA.
 
 ```{r}
 sum(is.na(rna))
@@ -154,7 +176,9 @@ sum(is.na(rna))
 
 Since the sum of NA values is 0, we have no missing data.
 
-Next, we will get the sample metadata for the cortex samples. We will filter the larger sample metadata file and align the sample IDs between the metadata and the transcript data.
+Next, we will get the sample metadata for the cortex samples. We will filter the 
+larger sample metadata file and align the sample IDs between the metadata and 
+the transcript data.
 
 ```{r}
 meta_rna = meta[match(colnames(rna), meta$viallabel),]
@@ -162,8 +186,9 @@ meta_rna = meta[match(colnames(rna), meta$viallabel),]
 all(colnames(rna) == meta_rna$viallabel)
 ```
 
-Now that we have meaningful group identifiers for each sample, we will calculate the principal components of the expression counts. R has several functions which calculate principal components, but we will use the "pcaMethods" package. There are many
-different methods to compute the principal components in the pcaMethods 
+Now that we have meaningful group identifiers for each sample, we will calculate 
+the principal components of the expression counts. R has several functions which calculate principal components, but we will use the "pcaMethods" package. There 
+are many different methods to compute the principal components in the pcaMethods 
 package. You can use the `listPcaMethods()` function to list all of them. Here,
 we will used hte 'svd' method, which uses singular value decomposition to 
 calculate the principal components. We will also standardize the columns to
@@ -182,10 +207,12 @@ Let's look at the PCA summary.
 summary(pca_rna)
 ```
 
-From the summary of the PCA, we can see that PC1 accounts for the overwhelming majority of the variance. This is a large amount of variance for the first PC to explain 
-and it may indicate something unusual about the data.
+From the summary of the PCA, we can see that PC1 accounts for the overwhelming 
+majority of the variance. This is a large amount of variance for the first PC to 
+explain and it may indicate something unusual about the data.
 
-Let's get the principal components from the PCA object. This is stored in the "loadings" slot.
+Let's get the principal components from the PCA object. This is stored in the 
+"loadings" slot.
 
 ```{r}
 ldngs = data.frame(loadings(pca_rna)) |>
@@ -193,7 +220,8 @@ ldngs = data.frame(loadings(pca_rna)) |>
           left_join(meta_rna, by = 'viallabel')
 ```
 
-Then we will plot the first two principal components, colored and shaped by sex and experimental group.
+Then we will plot the first two principal components, colored and shaped by sex 
+and experimental group.
 
 ```{r}
 ldngs |>
@@ -205,20 +233,27 @@ ldngs |>
   theme(text = element_text(size = 18))
 ```
 
-The plot above shows PC1 on the X-axis and PC2 on the Y-axis. Each point represents one rat's kidney expression value and is colored by sex and shaped by experimental group.
+The plot above shows PC1 on the X-axis and PC2 on the Y-axis. Each point 
+represents one rat's kidney expression value and is colored by sex and shaped by experimental group.
 Note that PC1 accounts for 97% of the variance, which is high.
 
 ::: challenge
 ## Challenge 2: What do you think about this plot?
 
-Look at the PCA plot. What differences do you see between the sex and treatment groups? Are there any odd points?
+Look at the PCA plot. What differences do you see between the sex and treatment 
+groups? Are there any odd points?
 
 ::: solution
-The data separate by sex on the PC2 axis. At this resolution, there are not large differences between treatment groups. There is one point, a male in the 2 week group, which is far from the other points on the PC1 axis.
+The data separate by sex on the PC2 axis. At this resolution, there are not 
+large differences between treatment groups. There is one point, a male in the 2 
+week group, which is far from the other points on the PC1 axis.
 :::
 :::
 
-What should we do about the outlier data point? Why might one sample be far from the others? Is it a real data point that should be left in the data set? Should we remove it? How can we start looking into whether this is a data point that we should ask the investigators about?
+What should we do about the outlier data point? Why might one sample be far from 
+the others? Is it a real data point that should be left in the data set? Should 
+we remove it? How can we start looking into whether this is a data point that we 
+should ask the investigators about?
 
 First, let's get the sample ID for the outlier sample.
 
@@ -240,11 +275,17 @@ ldngs |>
   theme(text = element_text(size = 18))
 ```
 
-Do we have any other data that we could use to figure out whether the kidney data is "good" or not? Perhaps the rat has kidney disease and really is quite different from the other rats. Or perhaps the rat has an infection. We can't remove this data point on our own, but we can gather evidence to present to the investigator to make a decision.
+Do we have any other data that we could use to figure out whether the kidney 
+data is "good" or not? Perhaps the rat has kidney disease and really is quite 
+different from the other rats. Or perhaps the rat has an infection. We can't 
+remove this data point on our own, but we can gather evidence to present to the investigator to make a decision.
 
-We have transcript data in other tissues and protein data in the same tissues. What if we look at the other data and see if the same rat is an outlier in other data sets?
+We have transcript data in other tissues and protein data in the same tissues. 
+What if we look at the other data and see if the same rat is an outlier in other
+data sets?
 
-Let's gather all of the code together to read in the transcript data for one tissue, get the sample metadata, and make a PCA plot.
+Let's gather all of the code together to read in the transcript data for one 
+tissue, get the sample metadata, and make a PCA plot.
 
 ```{r eval=FALSE}
 # Get the viallabel for the outlier sample so that we can plot it.
@@ -288,8 +329,8 @@ print(p)
 
 ::: instructor
 Form the students into groups. Have some of them read in all of the transcript 
-data, make a PCA plot, and compare it with the kidney transcript data. Have othe
-r groups read in the proteomics data, make PCA plots and compare it with the 
+data, make a PCA plot, and compare it with the kidney transcript data. Have 
+other groups read in the proteomics data, make PCA plots and compare it with the 
 kidney data. The proteomics data will have missing data, so the students will 
 need to change the PCA method to 'nipals'.
 :::
