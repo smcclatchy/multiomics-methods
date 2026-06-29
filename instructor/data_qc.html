@@ -333,11 +333,11 @@ analysis (PCA).</li>
 </div>
 <section><h2 class="section-heading" id="omics-qc">*-omics QC<a class="anchor" aria-label="anchor" href="#omics-qc"></a></h2>
 <hr class="half-width"><p>Most *-omics data is derived from raw measurements which are heavily
-processed to produce a matrix of measurements with “features”
-(i.e. transcripts, proteins, metabolites, etc.) in rows and samples in
-columns. Each technology has its own set of best practices for quality
-control and normalization. In this lesson, we will be working with
-<em>processed</em> data, which has gone through these procedures.</p>
+processed to produce a matrix of measurements with <a href="reference.html">features</a> (i.e. transcripts, proteins,
+metabolites, etc.) in rows and samples in columns. Each technology has
+its own set of best practices for quality control and normalization. In
+this lesson, we will be working with <em>processed</em> data, which has
+gone through these procedures.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -390,10 +390,9 @@ control and normalization. In this lesson, we will be working with
 </div>
 <div class="section level3">
 <h3 id="sample-metadata">Sample Metadata<a class="anchor" aria-label="anchor" href="#sample-metadata"></a></h3>
-<p>First, we will read in the sample metadata file. A “metadata” file
-contains information about the data, for example, the sex, age, and type
-of sample. In this case, we will extract the sex and treatment groups
-for the rats.</p>
+<p>First, we will read in the sample metadata file. A <a href="reference.html">metadata</a> file contains information about the
+data, for example, the sex, age, and type of sample. In this case, we
+will extract the sex and treatment groups for the rats.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -404,7 +403,7 @@ for the rats.</p>
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="error" tabindex="0"><code>Error:
-! 'sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
+! './sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
   current working directory:
   '/__w/multiomics-methods/multiomics-methods/site/built'.</code></pre>
 </div>
@@ -434,11 +433,12 @@ for the rats.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'meta' not found</code></pre>
 </div>
-<p>There are several columns with cryptic numbers in them. The ‘pid’
-column is a unique number for each rat. The ‘bid’ column is unique
-numeric value for a batch of rats in a cohort. The ‘viallabel’ column is
-a unique number for a sample vial. The sex, age, and grp columns contain
-other information about each rat.</p>
+<p>There are several columns with cryptic numbers in them. The
+<code>pid</code> column is a unique number for each rat. The
+<code>bid</code> column is unique numeric value for a batch of rats in a
+cohort. The <code>viallabel</code> column is a unique number for a
+sample vial. The sex, age, and grp columns contain other information
+about each rat.</p>
 <p>How many rats do we have in each group?</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -510,22 +510,22 @@ of the file.</p>
 ! object 'rna' not found</code></pre>
 </div>
 <p>From the top of the RNA file, you can see that genes are in rows. The
-rownames which look like “ENSRNOG00000000012” are Ensembl rat gene IDs.
-The columns contain the samples. This is a traditional omics data format
-which is transposed from the traditional statistics table format in
-which samples are in rows and observations are in columns.</p>
+rownames which look like <code>ENSRNOG00000000012</code> are Ensembl rat
+gene IDs. The columns contain the samples. This is a traditional omics
+data format which is transposed from the traditional statistics table
+format in which samples are in rows and observations are in columns.</p>
 <div id="challenge-1-what-kind-of-data-is-in-the-rna-object" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
 <div id="challenge-1-what-kind-of-data-is-in-the-rna-object" class="callout-inner">
-<h3 class="callout-title">Challenge 1: What kind of data is in the ‘rna’
-object?</h3>
+<h3 class="callout-title">Challenge 1: What kind of data is in the
+<code>rna</code> object?</h3>
 <div class="callout-content">
-<p>Click on the “rna” data object in the Environment tab on the right
-side of your screen. Look at the numbers in the data matrix. Do we have
-RNASeq counts? Make a histogram of the data to look at it’s
+<p>Click on the <code>rna</code> data object in the Environment tab on
+the right side of your screen. Look at the numbers in the data matrix.
+Do we have RNASeq counts? Make a histogram of the data to look at it’s
 distribution. Then make a boxplot of the RNA data. How do you think that
 the data has been transformed and processed?</p>
 </div>
@@ -597,15 +597,15 @@ the metadata and the transcript data.</p>
 ! object 'rna' not found</code></pre>
 </div>
 <p>Now that we have meaningful group identifiers for each sample, we
-will calculate the principal components of the expression counts. R has
-several functions which calculate principal components, but we will use
-the “pcaMethods” package. There are many different methods to compute
-the principal components in the pcaMethods package. You can use the
+will calculate the <a href="reference.html">principal components</a> of
+the expression counts. R has several functions which calculate principal
+components, but we will use the <code>pcaMethods</code> package. There
+are many different methods to compute the principal components in the
+<code>pcaMethods</code> package. You can use the
 <code>listPcaMethods()</code> function to list all of them. Here, we
-will used hte ‘svd’ method, which uses singular value decomposition to
-calculate the principal components. We will also standardize the columns
-to make the mean equal to zero and the standard deviation equal to
-one.</p>
+will used the <code>svd</code> method, which uses <a href="reference.html">singular value decomposition</a> to calculate the
+principal components. We will also standardize the columns to make the
+mean equal to zero and the standard deviation equal to one.</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -639,7 +639,7 @@ overwhelming majority of the variance. This is a large amount of
 variance for the first PC to explain and it may indicate something
 unusual about the data.</p>
 <p>Let’s get the principal components from the PCA object. This is
-stored in the “loadings” slot.</p>
+stored in the <code>loadings</code> slot.</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -809,7 +809,7 @@ transcript data, make a PCA plot, and compare it with the kidney
 transcript data. Have other groups read in the proteomics data, make PCA
 plots and compare it with the kidney data. The proteomics data will have
 missing data, so the students will need to change the PCA method to
-‘nipals’.</p>
+<code>nipals</code>.</p>
 </div>
 </div>
 </div>
