@@ -18,9 +18,11 @@ exercises: 2
 ## \*-omics QC
 
 Most \*-omics data is derived from raw measurements which are heavily processed 
-to produce a matrix of measurements with "features" (i.e. transcripts, proteins, metabolites, etc.) in rows and samples in columns. Each technology has its own 
-set of best practices for quality control and normalization. In this lesson, we 
-will be working with *processed* data, which has gone through these procedures.
+to produce a matrix of measurements with [features](../learners/reference.md) 
+(i.e. transcripts, proteins, metabolites, etc.) in rows and samples in columns. 
+Each technology has its own set of best practices for quality control and 
+normalization. In this lesson, we will be working with *processed* data, which 
+has gone through these procedures.
 
 
 ``` r
@@ -70,9 +72,7 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A "metadata" file contains 
-information about the data, for example, the sex, age, and type of sample. In 
-this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A [metadata](../learners/reference.md) file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
 
 
 ``` r
@@ -81,7 +81,7 @@ meta = read_csv(meta_file, col_types = 'cccccc')
 
 ``` error
 Error:
-! 'sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
+! './sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
   current working directory:
   '/__w/multiomics-methods/multiomics-methods/site/built'.
 ```
@@ -110,9 +110,9 @@ Error:
 ! object 'meta' not found
 ```
 
-There are several columns with cryptic numbers in them. The 'pid' column is a 
-unique number for each rat. The 'bid' column is unique numeric value for a batch 
-of rats in a cohort. The 'viallabel' column is a unique number for a sample 
+There are several columns with cryptic numbers in them. The `pid` column is a 
+unique number for each rat. The `bid` column is unique numeric value for a batch 
+of rats in a cohort. The `viallabel` column is a unique number for a sample 
 vial. The sex, age, and grp columns contain other information about each rat.
 
 How many rats do we have in each group?
@@ -181,14 +181,14 @@ Error:
 ```
 
 From the top of the RNA file, you can see that genes are in rows. The rownames 
-which look like "ENSRNOG00000000012" are Ensembl rat gene IDs. The columns 
+which look like `ENSRNOG00000000012` are Ensembl rat gene IDs. The columns 
 contain the samples. This is a traditional omics data format which is transposed 
 from the traditional statistics table format in which samples are in rows and observations are in columns.
 
 ::::::::::::::::: challenge
-## Challenge 1: What kind of data is in the 'rna' object?
+## Challenge 1: What kind of data is in the `rna` object?
 
-Click on the "rna" data object in the Environment tab on the right side of your 
+Click on the `rna` data object in the Environment tab on the right side of your 
 screen. Look at the numbers in the data matrix. Do we have RNASeq counts? Make a histogram of the data to look at it's distribution. Then make a boxplot of the 
 RNA data. How do you think that the data has been transformed and processed?
 
@@ -244,12 +244,12 @@ Error:
 ```
 
 Now that we have meaningful group identifiers for each sample, we will calculate 
-the principal components of the expression counts. R has several functions which calculate principal components, but we will use the "pcaMethods" package. There 
-are many different methods to compute the principal components in the pcaMethods 
-package. You can use the `listPcaMethods()` function to list all of them. Here,
-we will used hte 'svd' method, which uses singular value decomposition to 
-calculate the principal components. We will also standardize the columns to
-make the mean equal to zero and the standard deviation equal to one.
+the [principal components](../learners/reference.md) of the expression counts. R 
+has several functions which calculate principal components, but we will use the `pcaMethods` package. There are many different methods to compute the principal components in the `pcaMethods` package. You can use the `listPcaMethods()` 
+function to list all of them. Here, we will used the `svd` method, which uses 
+[singular value decomposition](../learners/reference.md) to calculate the 
+principal components. We will also standardize the columns to make the mean 
+equal to zero and the standard deviation equal to one.
 
 
 ``` r
@@ -281,7 +281,7 @@ majority of the variance. This is a large amount of variance for the first PC to
 explain and it may indicate something unusual about the data.
 
 Let's get the principal components from the PCA object. This is stored in the 
-"loadings" slot.
+`loadings` slot.
 
 
 ``` r
@@ -426,7 +426,7 @@ Form the students into groups. Have some of them read in all of the transcript
 data, make a PCA plot, and compare it with the kidney transcript data. Have 
 other groups read in the proteomics data, make PCA plots and compare it with the 
 kidney data. The proteomics data will have missing data, so the students will 
-need to change the PCA method to 'nipals'.
+need to change the PCA method to `nipals`.
 :::
 
 # Transcript PCA Plots
