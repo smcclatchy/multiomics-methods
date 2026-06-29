@@ -53,7 +53,7 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 
 ```{r echo=FALSE}
 # Base project directory.
-base_dir  = 'sbgenomics/workspace'
+base_dir  = './sbgenomics/workspace'
 
 # Data directory.
 data_dir  = file.path(base_dir, 'data')
@@ -76,9 +76,7 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A "metadata" file contains 
-information about the data, for example, the sex, age, and type of sample. In 
-this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A [metadata](../learners/reference.md) file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
 
 ```{r}
 meta = read_csv(meta_file, col_types = 'cccccc')
