@@ -4,5 +4,7 @@ title: 'Reference'
 
 ## Glossary
 
-This is a placeholder file. Please add content here. 
+ 
+metadata
+: Data about the data. Metadata describes the data and makes it easier to locate, manage, or use. 
 
