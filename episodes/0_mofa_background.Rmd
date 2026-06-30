@@ -1,0 +1,110 @@
+---
+title: "Multi-omics factor analysis (MOFA)"
+teaching: 10
+exercises: 2
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- How do you write a lesson using R Markdown and `{sandpaper}`?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- Explain how to use markdown with the new lesson template
+- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+# Background & Motivation
+
+Multi-Omics Factor Analysis (MOFA) is an unsupervised statistical framework 
+designed to integrate diverse biological datasets. Much like a 
+Principal Component Analysis (PCA) for multiple matrices, MOFA decomposes 
+complex data into a set of Factors that represent the underlying biological 
+drivers.
+
+Argelaguet, R., Velten, B., Arnol, D. *et al.* Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets. *Mol Syst Biol* **14**, MSB178124 (2018). <https://doi.org/10.15252/msb.20178124>
+
+::: callout-note
+## Key Concept: Why not just use PCA?
+
+If we simply stack RNA and Protein data and run a standard PCA, the model treats 
+every feature as having the same "source" of noise and variance. This 
+is problematic for two reasons:
+
+1.  **Unique Variance Structures**: RNA and Protein have different dynamic 
+ranges and measurement noise. A PCA might prioritize the "noisiest" modality 
+rather than the most biological one.
+2.  **Concordance vs. Discordance**: PCA forces all data into a single set of 
+components. It cannot easily distinguish between a biological signal that is 
+synchronized (seen in both RNA and Protein) and one that is view-specific 
+(e.g., a post-translational change that only appears in the Protein data).
+3.  **Feature Space Imbalance**: In multi-omics, one view often has 
+significantly more features than another (e.g., 20,000 transcripts vs. 10,000 
+proteins). In a concatenated PCA, the view with more features exerts more 
+"weight" on the model, potentially drowning out critical signals from the 
+smaller dataset.
+
+MOFA solves this by assigning each data type its own View. This allows the model 
+to mathematically separate the "Global" variance (the story both views tell 
+together) from the "Private" variance (the story unique to just the Protein or 
+just the RNA).
+:::
+
+# MOFA: Modeling the "State" of the Tissue
+
+We use MOFA to build a mathematical model of the tissue. This is an 
+**iterative process** where our goal is to identify the 
+**underlying biological programs** that coordinate individual molecular changes. 
+Rather than viewing different omics data sets as separate lists, MOFA treats 
+them as different reporters covering the same story.
+
+Once the model is trained, we can determine which factors track with our primary 
+**experimental question** and which represent other major sources of variation. 
+In any high-dimensional data set, these factors will reflect a mix of 
+**intrinsic biological traits**—such as sex, age, or cellular composition—and 
+**technical influences** like batch effects. By capturing these independent 
+patterns of variation, MOFA allows us to isolate the specific signal we are 
+looking for from the broader landscape of biological and technical noise.
+
+![](fig/MOFA_overview_image.png)
+
+# Moving Beyond the Central Dogma with MOFA
+
+::: callout-note
+## Key Concept
+
+If biology followed one linear path (i.e. the central dogma of DNA 
+$\rightarrow$ RNA $\rightarrow$ Protein), we would only ever need to measure one 
+outcome. Multi-omics is about more than finding where these data modalities 
+agree; it is also about capturing where they differ to tell the full story of a 
+tissue or cell.
+:::
+
+Integrating high-dimensional RNA and protein data can be challenging because 
+they are not just copies of each other; they operate on different timescales and 
+under different physical constraints. Examples of biological uncoupling include:
+
+-   Temporal Lag: You see the RNA 'instruction', but the protein 'result' hasn't accumulated yet.
+
+-   Translational buffering: A secondary signal is required to start translation.
+
+-   Protein turnover: A protein is being degraded or used as fast as it is made.
+
+MOFA addresses the gap between RNA 'instruction' and protein 'result' by 
+identifying factors based on sample-wide covariation rather than gene-to-protein 
+correlation. By analyzing the concordant (synchronized) and discordant 
+(divergent) drivers within a factor, we can distinguish between the core genetic 
+programs and the post-translational tuning that ultimately shapes physiology.
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- Use `.md` files for episodes when you want static content
+- Use `.Rmd` files for episodes when you need to generate output
+- Run `sandpaper::check_lesson()` to identify any issues with your lesson
+- Run `sandpaper::build_lesson()` to preview your lesson locally
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
