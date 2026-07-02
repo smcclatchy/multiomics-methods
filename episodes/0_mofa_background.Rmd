@@ -17,6 +17,13 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+```{r warning=FALSE, echo=FALSE}
+library(devtools)
+# analysis package
+install_github("MoTrPAC/MotrpacRatTraining6mo")
+```
+
+
 # Background & Motivation
 
 Multi-Omics Factor Analysis (MOFA) is an unsupervised statistical framework 

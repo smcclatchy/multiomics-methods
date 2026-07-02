@@ -24,6 +24,12 @@ Each technology has its own set of best practices for quality control and
 normalization. In this lesson, we will be working with *processed* data, which 
 has gone through these procedures.
 
+```{r warning=FALSE, echo=FALSE}
+# Install packages for omics_data_qc
+install.packages(c('tidyverse', 'ggrepel', 'BiocManager'))
+BiocManager::install('pcaMethods')
+```
+
 ```{r warning=FALSE}
 suppressPackageStartupMessages(library(tidyverse)) 
 suppressPackageStartupMessages(library(ggrepel))

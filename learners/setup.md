@@ -15,13 +15,15 @@ RStudio development environment on the data analysis and sharing platform
 1. Request your free pilot fund cloud credits by 
 [contacting CAVATICA support](https://docs.cavatica.org/docs/getting-started).
 
-1. [Create a project](https://docs.cavatica.org/docs/quickstart#create-a-project). Give it a good descriptive name like `r-multiomics`.
+1. [Create a project](https://docs.cavatica.org/docs/quickstart#create-a-project). 
+Give it a good descriptive name like `r-multiomics`.
 
 1. For **Billing group**, select `Pilot Funds` if you have received free pilot 
 fund cloud credits.
 
-1. Under **Advanced settings**, change the default setting to `Allow network access`.
-![](episodes/fig/block-network-access.png)
+1. Under **Advanced settings**, change the default setting to 
+`Allow network access`.
+![Choose allow network access under advanced settings](./fig/allow-network-access.png)
 
 1. Copy the `env-rstudio-multiomics` project into your new project.
 
