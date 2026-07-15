@@ -5573,6 +5573,13 @@
       "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
+    "inspectdf": {
+      "Package": "inspectdf",
+      "URL": "https://alastairrushworth.github.io/inspectdf/",
+      "Version": "0.0.13",
+      "Remotes": "alastairrushworth/inspectdf",
+      "RemoteRepo": "inspectdf"
+    },
     "irlba": {
       "Package": "irlba",
       "Version": "2.3.7",
