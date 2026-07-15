@@ -5583,23 +5583,31 @@
       "Maintainer": "Alastair Rushworth <alastairmrushworth@gmail.com>",
       "Description": "A collection of utilities for columnwise summary, comparison and visualisation of data frames.  Functions report missingness, categorical levels, numeric distribution, correlation, column types and memory usage.",
       "Language": "en_GB",
-      "LinkingTo": "Rcpp",
       "LazyLoad": "yes",
       "LazyData": "true",
       "ByteCompile": "yes",
       "Encoding": "UTF-8",
-      "Depends": "R (>= 3.5.0)",
-      "Imports": "dplyr",
-      "": "ggplot2",
-      "": "ggfittext",
-      "": "magrittr",
-      "": "purrr",
-      "": "progress",
-      "": "Rcpp",
-      "": "rlang",
-      "": "tibble",
-      "": "tidyr",
-      "Suggests": "testthat",
+      "Depends": [
+        "R (>= 3.5.0)"
+      ],
+      "LinkingTo": [
+        "Rcpp"
+      ],
+      "Imports": [
+        "dplyr",
+        "ggplot2",
+        "gfittext",
+        "magrittr",
+        "purrr",
+        "progress",
+        "Rcpp",
+        "rlang",
+        "tibble",
+        "tidyr"
+      ],
+      "Suggests": [
+        "testthat"
+      ],
       "License": "GPL-2",
       "BugReports": "https://github.com/alastairrushworth/inspectdf/issues",
       "RoxygenNote": "7.3.3"
@@ -5610,7 +5618,7 @@
       "Source": "Repository",
       "Type": "Package",
       "Title": "Fast Truncated Singular Value Decomposition and Principal Components Analysis for Large Dense and Sparse Matrices",
-      "Date": "2026-1-26",
+      "Date": "2026-01-26",
       "Authors@R": "c( person(\"Jim\", \"Baglama\", role=c(\"aut\", \"cph\"), email=\"jbaglama@uri.edu\"), person(\"Lothar\", \"Reichel\", role=c(\"aut\", \"cph\"), email=\"reichel@math.kent.edu\"), person(\"B. W.\", \"Lewis\", role=c(\"aut\",\"cre\",\"cph\"), email=\"blewis@illposed.net\"))",
       "Description": "Fast and memory efficient methods for truncated singular value decomposition and principal components analysis of large sparse and dense matrices.",
       "Depends": [
