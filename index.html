@@ -198,7 +198,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#setup">Setup</a></li>
-<li><a href="#project-setup">Project Setup</a></li>
+<li><a href="#project-organization">Project Organization</a></li>
 <li><a href="#data-sets">Data Sets</a></li>
 <li><a href="#software-setup">Software Setup</a></li>
         </ul></div><!--/div.accordion-body-->
@@ -301,16 +301,14 @@ platform <a href="https://www.cavatica.org/" class="external-link">CAVATICA</a>.
 <h3 id="access-cavatica">Access CAVATICA<a class="anchor" aria-label="anchor" href="#access-cavatica"></a></h3>
 <ol style="list-style-type: decimal"><li><p><a href="https://docs.cavatica.org/docs/sign-up-for-cavatica" class="external-link">Sign up for a
 free CAVATICA account</a>.</p></li>
-<li><p>Request your free pilot fund cloud credits by <a href="https://docs.cavatica.org/docs/getting-started" class="external-link">contacting
-CAVATICA support</a>.</p></li>
 <li><p><a href="https://docs.cavatica.org/docs/quickstart#create-a-project" class="external-link">Create
 a project</a>. Give it a good descriptive name like
 <code>r-multiomics</code>.</p></li>
-<li><p>For <strong>Billing group</strong>, select
-<code>Pilot Funds</code> if you have received free pilot fund cloud
-credits.</p></li>
+<li><p>For <strong>Billing group</strong>, select funds provided by the
+course or those that you have provided from your own funding
+source.</p></li>
 <li><p>Under <strong>Advanced settings</strong>, change the default
-setting to <code>Allow network access</code>. <img src="fig/block-network-access.png" class="figure"></p></li>
+setting to <code>Allow network access</code>. <img src="./fig/allow-network-access.png" alt="Choose allow network access under advanced settings" class="figure"></p></li>
 <li><p>Copy the <code>env-rstudio-multiomics</code> project into your
 new project.</p></li>
 <li><p>Run a <a href="https://docs.cavatica.org/docs/run-an-analysis-using-data-cruncher" class="external-link">Data
@@ -325,19 +323,64 @@ RStudio.</p></li>
 <li>Use the default <strong>Environment Setup</strong>. You can read
 more about default and other available <a href="https://docs.cavatica.org/docs/about-libraries-in-a-data-cruncher-analysis#rstudio" class="external-link">environments
 and libraries for RStudio</a>.</li>
-</ul></div>
-</section><section><h2 class="section-heading" id="project-setup">Project Setup<a class="anchor" aria-label="anchor" href="#project-setup"></a></h2>
-<hr class="half-width"><p>Before you begin, determine your working directory
-(<code>get(wd)</code> and <code>set(wd)</code>), and create two new
-folders within your preferred working directory entitled
-<code>data</code> and <code>results</code>. You can copy and paste the
-following commands into the R console.</p>
-<div class="codewrapper sourceCode" id="cb1">
+</ul><p><a href="https://docs.cavatica.org/docs/getting-started" class="external-link">contacting
+CAVATICA support</a>.</p>
+</div>
+<div class="section level3">
+<h3 id="use-your-own-computer">Use your own computer<a class="anchor" aria-label="anchor" href="#use-your-own-computer"></a></h3>
+<p>R is a programming language that is especially powerful for data
+exploration, visualization, and statistical analysis. To interact with
+R, we use RStudio.</p>
+<ol style="list-style-type: decimal"><li><p>Install the latest version of R from <a href="https://cran.r-project.org/" class="external-link">CRAN</a>.</p></li>
+<li><p>Install the latest version of <a href="https://www.rstudio.com/products/rstudio/download/" class="external-link">RStudio</a>.
+Choose the free RStudio Desktop version for Windows, Mac, or
+Linux.</p></li>
+<li><p>Start RStudio.</p></li>
+<li><p>Install R and Bioconductor packages.</p></li>
+</ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"data"</span><span class="op">)</span></span>
-<span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"results"</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"ggrepel"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw">require</span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu">install.packages</span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"pcaMethods"</span>, <span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<p>Once the installation is complete, load the libraries to make sure
+that they installed correctly.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">ggrepel</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">pcaMethods</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="project-organization">Project Organization<a class="anchor" aria-label="anchor" href="#project-organization"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>Create a new project in your Desktop called
+<code>multiomics</code>.</li>
+</ol><ul><li>Click the <code>File</code> menu button, then
+<code>New Project</code>.</li>
+<li>Click <code>New Directory</code>.</li>
+<li>Click <code>New Project</code>.</li>
+<li>Type <code>multiomics</code> as the directory name. Browse to your
+Desktop to create the project there.</li>
+<li>Click the <code>Create Project</code> button.</li>
+</ul><ol start="2" style="list-style-type: decimal"><li>Use the <code>Files</code> tab to create a <code>data</code> folder
+to hold the data, a <code>scripts</code> folder to house your scripts,
+and a <code>results</code> folder to hold results. Alternatively, you
+can use the R console to run the following commands for step 2 only. You
+still need to create a project with step 1.</li>
+</ol><div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"./data"</span><span class="op">)</span></span>
+<span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"./scripts"</span><span class="op">)</span></span>
+<span><span class="fu">dir.create</span><span class="op">(</span><span class="st">"./results"</span><span class="op">)</span></span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
 <hr class="half-width"><!--
@@ -371,7 +414,7 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Use PuTTY</p>
 </div>
@@ -386,7 +429,7 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Use Terminal.app</p>
 </div>
@@ -401,7 +444,7 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Use Terminal</p>
 </div>
@@ -463,8 +506,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/index.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/index.html",
   "dateCreated": "2026-03-02",
-  "dateModified": "2026-06-30",
-  "datePublished": "2026-06-30"
+  "dateModified": "2026-07-16",
+  "datePublished": "2026-07-16"
 }
 
   </script><script>
