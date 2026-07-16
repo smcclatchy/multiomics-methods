@@ -25,8 +25,11 @@ exercises: 2
 
 ### On CAVATICA
 
-2
+# Base project directory.
+base_dir  = '/sbgenomics/workspace'
 
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
 
 :::
 
@@ -41,6 +44,7 @@ exercises: 2
 5
 
 :::
+
 ```{r warning=FALSE, echo=FALSE}
 # library(devtools)
 # analysis package
@@ -427,8 +431,8 @@ Let's load our R packages:
 #| warning: false
 #| message: false
 
-library(reticulate)
-use_python("/usr/bin/python3", required = TRUE)
+# library(reticulate)
+# use_python("/usr/bin/python3", required = TRUE)
 
 # check that python mofapy2 package is installed
 # py_module_available("mofapy2")
@@ -806,12 +810,12 @@ Let's load our R packages:
 #| warning: false
 #| message: false
 
-library(reticulate)
-use_python("/usr/bin/python3", required = TRUE)
+# library(reticulate)
+# use_python("/usr/bin/python3", required = TRUE)
 
 # py_module_available("mofapy2")
 
-library(MotrpacRatTraining6mo)
+# library(MotrpacRatTraining6mo)
 library(MOFA2)
 library(tidyverse)
 library(edgeR) # use for RNA normalization functions
@@ -820,9 +824,9 @@ library(fgsea) # gene set enrichment analysis
 
 # extra plotting helpers
 library(ggrepel)
-library(patchwork)
+# library(patchwork)
 library(rrvgo)
-library(ggpubr)
+# library(ggpubr)
 
 # motrpac function to load a table map with gene id and gene name
 TRNSCRPT_FEATURE_ANNOT <- load_feature_annotation("TRNSCRPT") 
