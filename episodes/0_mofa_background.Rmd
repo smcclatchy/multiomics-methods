@@ -17,6 +17,30 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: group-tab
+
+### On your own computer
+
+1
+
+### On CAVATICA
+
+2
+
+
+:::
+
+::: group-tab
+
+### On your own computer
+
+4
+
+### On CAVATICA
+
+5
+
+:::
 ```{r warning=FALSE, echo=FALSE}
 # library(devtools)
 # analysis package
@@ -24,8 +48,6 @@ exercises: 2
 # Github will not load MotrpacRatTraining6mo because it's too big. Instead,
 # define MotrpacRatTraining6mo functions to get the website to build on Github.
 # the following are adapted from 
-# https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/utils.R#L44C1-L50C2
-# and 
 # https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/fetch_prep_data.R#L403
 
 # Base project directory.
@@ -411,7 +433,7 @@ use_python("/usr/bin/python3", required = TRUE)
 # check that python mofapy2 package is installed
 # py_module_available("mofapy2")
 
-library(MotrpacRatTraining6mo)
+# library(MotrpacRatTraining6mo)
 library(MOFA2)
 library(tidyverse)
 library(edgeR) # use for RNA normalization functions
@@ -435,7 +457,7 @@ this_tissue <- "SKM-GN"
 # organize the sample meta data
 #------------------------------
 
-meta <- readRDS("data/motrpac_rat_pheno_wide.rds")
+meta <- load("data/motrpac_rat_pheno_wide.rds")
 meta <- meta %>% select(pid, sex, group, 
                         vo2.max.test.vo2_max_2, 
                         nmr.testing.nmr_lean_2 )
@@ -819,7 +841,7 @@ this_tissue <- "SKM-GN"
 # organize the sample meta data
 #------------------------------
 
-meta <- readRDS("data/motrpac_rat_pheno_wide.rds")
+meta <- load("data/motrpac_rat_pheno_wide.rds")
 meta <- meta %>% select(pid, sex, group, vo2.max.test.vo2_max_2, nmr.testing.nmr_lean_2 )
 
 meta <- meta %>% filter(group %in% c("control", "4w", "8w"))
