@@ -28,21 +28,33 @@ has gone through these procedures.
 ``` r
 suppressPackageStartupMessages(library(tidyverse)) 
 suppressPackageStartupMessages(library(ggrepel))
-```
-
-``` error
-Error in `library()`:
-! there is no package called 'ggrepel'
-```
-
-``` r
 suppressPackageStartupMessages(library(pcaMethods))
 ```
 
-``` error
-Error in `library()`:
-! there is no package called 'pcaMethods'
+::: tab
+
+### On your own computer
+
+
+``` r
+# Metadata file.
+meta_file = 'data/motrpac_metadata.csv'
+
+# RNA file directory.
+rna_dir   = 'data/rna'
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = 'data/protein'  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE) 
 ```
+
+
+### On CAVATICA
 
 
 ``` r
@@ -69,21 +81,19 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 ```
 
 
+:::
+
 
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A [metadata](../learners/reference.md) file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A 
+[metadata](../learners/reference.md) file contains information about the data, 
+for example, the sex, age, and type of sample. In this case, we will extract the 
+sex and treatment groups for the rats.
 
 
 ``` r
 meta = read_csv(meta_file, col_types = 'cccccc')
-```
-
-``` error
-Error:
-! './sbgenomics/workspace/data/motrpac_metadata.csv' does not exist in
-  current working directory:
-  '/__w/multiomics-methods/multiomics-methods/site/built'.
 ```
 
 What are the dimensions of the metadata?
@@ -93,9 +103,8 @@ What are the dimensions of the metadata?
 dim(meta)
 ```
 
-``` error
-Error:
-! object 'meta' not found
+``` output
+[1] 6156    6
 ```
 
 Next, we will look at the first few rows of the sample metadata.
@@ -105,9 +114,16 @@ Next, we will look at the first few rows of the sample metadata.
 head(meta)
 ```
 
-``` error
-Error:
-! object 'meta' not found
+``` output
+# A tibble: 6 × 6
+  pid      bid   viallabel   sex   age   grp     
+  <chr>    <chr> <chr>       <chr> <chr> <chr>   
+1 10023259 90217 90217013001 male  1     8wk_ctrl
+2 10023259 90217 90217013104 male  1     8wk_ctrl
+3 10023259 90217 90217013105 male  1     8wk_ctrl
+4 10023259 90217 90217013106 male  1     8wk_ctrl
+5 10023259 90217 90217013107 male  1     8wk_ctrl
+6 10023259 90217 90217013108 male  1     8wk_ctrl
 ```
 
 There are several columns with cryptic numbers in them. The `pid` column is a 
@@ -126,9 +142,15 @@ meta |>
   pivot_wider(names_from = sex, values_from = n)
 ```
 
-``` error
-Error:
-! object 'meta' not found
+``` output
+# A tibble: 5 × 4
+  age   grp      female  male
+  <chr> <chr>     <int> <int>
+1 1     1wk          15    15
+2 1     2wk          15    15
+3 1     4wk          18    18
+4 1     8wk_ctrl     12    12
+5 1     8wk_trng     14    13
 ```
 
 There are about 15 rats per treatment group. Also, it appears that we only have 
@@ -150,11 +172,6 @@ i = str_detect(rna_files, tissue)
 rna = readRDS(rna_files[i])
 ```
 
-``` error
-Error in `gzfile()`:
-! invalid 'description' argument
-```
-
 What are the dimensions of the RNA matrix?
 
 
@@ -162,9 +179,8 @@ What are the dimensions of the RNA matrix?
 dim(rna)
 ```
 
-``` error
-Error:
-! object 'rna' not found
+``` output
+[1] 15981    50
 ```
 
 The data has about 16,000 rows and 50 columns. Let's look at the top of the 
@@ -175,9 +191,13 @@ file.
 rna[1:5,1:5]
 ```
 
-``` error
-Error:
-! object 'rna' not found
+``` output
+                   90217015902 90218015902 90222015902 90223015902 90225015902
+ENSRNOG00000000012    -1.25005    -1.33353    -0.98970    -0.66202     0.40944
+ENSRNOG00000000017     2.73095     2.80670     3.06532     3.14039     2.71366
+ENSRNOG00000000021     3.63803     3.85895     3.67937     3.66677     3.75723
+ENSRNOG00000000024     2.77459     2.44771     2.61562     2.48395     2.91182
+ENSRNOG00000000033     2.13625     2.76537     2.67416     2.78849     2.46297
 ```
 
 From the top of the RNA file, you can see that genes are in rows. The rownames 
@@ -213,9 +233,8 @@ the number of elements in the data matrix that are NA.
 sum(is.na(rna))
 ```
 
-``` error
-Error:
-! object 'rna' not found
+``` output
+[1] 0
 ```
 
 Since the sum of NA values is 0, we have no missing data.
@@ -227,20 +246,12 @@ the transcript data.
 
 ``` r
 meta_rna = meta[match(colnames(rna), meta$viallabel),]
-```
 
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 all(colnames(rna) == meta_rna$viallabel)
 ```
 
-``` error
-Error:
-! object 'rna' not found
+``` output
+[1] TRUE
 ```
 
 Now that we have meaningful group identifiers for each sample, we will calculate 
@@ -259,11 +270,6 @@ pca_rna = pcaMethods::pca(object = rna,
                           scale  = 'uv')
 ```
 
-``` error
-Error in `loadNamespace()`:
-! there is no package called 'pcaMethods'
-```
-
 Let's look at the PCA summary.
 
 
@@ -271,9 +277,15 @@ Let's look at the PCA summary.
 summary(pca_rna)
 ```
 
-``` error
-Error:
-! object 'pca_rna' not found
+``` output
+svd calculated PCA
+Importance of component(s):
+                 PC1     PC2    PC3     PC4     PC5    PC6     PC7     PC8
+R2            0.9738 0.00653 0.0020 0.00109 0.00066 0.0006 0.00056 0.00056
+Cumulative R2 0.9738 0.98031 0.9823 0.98340 0.98406 0.9847 0.98522 0.98578
+                  PC9   PC10
+R2            0.00052 0.0005
+Cumulative R2 0.98630 0.9868
 ```
 
 From the summary of the PCA, we can see that PC1 accounts for the overwhelming 
@@ -290,11 +302,6 @@ ldngs = data.frame(loadings(pca_rna)) |>
           left_join(meta_rna, by = 'viallabel')
 ```
 
-``` error
-Error:
-! object 'pca_rna' not found
-```
-
 Then we will plot the first two principal components, colored and shaped by sex 
 and experimental group.
 
@@ -309,10 +316,7 @@ ldngs |>
   theme(text = element_text(size = 18))
 ```
 
-``` error
-Error:
-! object 'ldngs' not found
-```
+<img src="fig/data_qc-rendered-unnamed-chunk-16-1.png" alt="" style="display: block; margin: auto;" />
 
 The plot above shows PC1 on the X-axis and PC2 on the Y-axis. Each point 
 represents one rat's kidney expression value and is colored by sex and shaped by experimental group.
@@ -344,11 +348,6 @@ outlier = ldngs |>
              filter(PC1 < 0.136)
 ```
 
-``` error
-Error:
-! object 'ldngs' not found
-```
-
 Then, let's add the vial label to the plot.
 
 
@@ -363,15 +362,13 @@ ldngs |>
   theme(text = element_text(size = 18))
 ```
 
-``` error
-Error:
-! object 'ldngs' not found
-```
+<img src="fig/data_qc-rendered-unnamed-chunk-18-1.png" alt="" style="display: block; margin: auto;" />
 
 Do we have any other data that we could use to figure out whether the kidney 
 data is "good" or not? Perhaps the rat has kidney disease and really is quite 
 different from the other rats. Or perhaps the rat has an infection. We can't 
-remove this data point on our own, but we can gather evidence to present to the investigator to make a decision.
+remove this data point on our own, but we can gather evidence to present to the 
+investigator to make a decision.
 
 We have transcript data in other tissues and protein data in the same tissues. 
 What if we look at the other data and see if the same rat is an outlier in other
@@ -435,14 +432,7 @@ need to change the PCA method to `nipals`.
 ``` r
 # Get the pid for the outlier sample so that we can plot it.
 outlier_pid = outlier$pid[1]
-```
 
-``` error
-Error:
-! object 'outlier' not found
-```
-
-``` r
 for(i in seq_along(rna_files)) {
   
   # Get the tissue.
@@ -484,20 +474,15 @@ for(i in seq_along(rna_files)) {
 } # for(i)
 ```
 
+<img src="fig/data_qc-rendered-unnamed-chunk-20-1.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-2.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-3.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-4.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-5.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-6.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-20-7.png" alt="" style="display: block; margin: auto;" />
+
 # Protein PCA Plots
 
 
 ``` r
 # Get the pid for the outlier sample so that we can plot it.
 outlier_pid = outlier$pid[1]
-```
 
-``` error
-Error:
-! object 'outlier' not found
-```
-
-``` r
 for(i in seq_along(prot_files)) {
   
   # Get the tissue.
@@ -538,6 +523,8 @@ for(i in seq_along(prot_files)) {
   
 } # for(i)
 ```
+
+<img src="fig/data_qc-rendered-unnamed-chunk-21-1.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-2.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-3.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-4.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-5.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-6.png" alt="" style="display: block; margin: auto;" /><img src="fig/data_qc-rendered-unnamed-chunk-21-7.png" alt="" style="display: block; margin: auto;" />
 
 ::: keypoints
 -   Omics data are so large that they need to be summarized concisely.

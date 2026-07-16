@@ -12,16 +12,15 @@ RStudio development environment on the data analysis and sharing platform
 
 1. [Sign up for a free CAVATICA account](https://docs.cavatica.org/docs/sign-up-for-cavatica).
 
-1. Request your free pilot fund cloud credits by 
-[contacting CAVATICA support](https://docs.cavatica.org/docs/getting-started).
+1. [Create a project](https://docs.cavatica.org/docs/quickstart#create-a-project). 
+Give it a good descriptive name like `r-multiomics`.
 
-1. [Create a project](https://docs.cavatica.org/docs/quickstart#create-a-project). Give it a good descriptive name like `r-multiomics`.
+1. For **Billing group**, select funds provided by the course or those that you 
+have provided from your own funding source.
 
-1. For **Billing group**, select `Pilot Funds` if you have received free pilot 
-fund cloud credits.
-
-1. Under **Advanced settings**, change the default setting to `Allow network access`.
-![](episodes/fig/block-network-access.png)
+1. Under **Advanced settings**, change the default setting to 
+`Allow network access`.
+![Choose allow network access under advanced settings](./fig/allow-network-access.png)
 
 1. Copy the `env-rstudio-multiomics` project into your new project.
 
@@ -36,15 +35,61 @@ fund cloud credits.
   other available
   [environments and libraries for RStudio](https://docs.cavatica.org/docs/about-libraries-in-a-data-cruncher-analysis#rstudio).
 
-## Project Setup
+[contacting CAVATICA support](https://docs.cavatica.org/docs/getting-started).
 
-Before you begin, determine your working directory (`get(wd)` and `set(wd)`), and 
-create two new folders within your preferred working directory entitled `data`
-and `results`. You can copy and paste the following commands into the R console.
+### Use your own computer
+
+R is a programming language that is especially powerful for data exploration, 
+visualization, and statistical analysis. To interact with R, we use RStudio. 
+
+1. Install the latest version of R from [CRAN](https://cran.r-project.org/).
+
+2. Install the latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/). 
+Choose the free RStudio Desktop version for Windows, Mac, or Linux. 
+
+3. Start RStudio. 
+
+4. Install R and Bioconductor packages. 
 
 ```r
-dir.create("data")
-dir.create("results")
+install.packages(c("tidyverse", "ggrepel"))
+
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("pcaMethods", ))
+
+```
+
+Once the installation is complete, load the libraries to make sure that they 
+installed correctly. 
+
+```r
+library(tidyverse)
+library(ggrepel)
+library(pcaMethods)
+
+```
+
+## Project Organization
+
+1. Create a new project in your Desktop called `multiomics`. 
+- Click the `File` menu button, then `New Project`.
+- Click `New Directory`. 
+- Click `New Project`.
+- Type `multiomics` as the directory name. Browse to your Desktop to create the 
+project there.
+- Click the `Create Project` button.
+
+2. Use the `Files` tab to create  a `data` folder to hold the data, a `scripts` 
+folder to house your scripts, and a `results` folder to hold results. 
+Alternatively, you can use the R console to run the following commands for step 
+2 only. You still need to create a project with step 1.
+
+```r
+dir.create("./data")
+dir.create("./scripts")
+dir.create("./results")
 ```
 
 ## Data Sets
