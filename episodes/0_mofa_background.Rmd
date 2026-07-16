@@ -18,9 +18,163 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r warning=FALSE, echo=FALSE}
-library(devtools)
+# library(devtools)
 # analysis package
-devtools::install_github("MoTrPAC/MotrpacRatTraining6mo")
+# devtools::install_github("MoTrPAC/MotrpacRatTraining6mo")
+# Github will not load MotrpacRatTraining6mo because it's too big. Instead,
+# define MotrpacRatTraining6mo functions to get the website to build on Github.
+# the following are adapted from 
+# https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/utils.R#L44C1-L50C2
+# and 
+# https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/fetch_prep_data.R#L403
+
+# Base project directory.
+base_dir  = './sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+tissue_abbrev <- load(file.path(data_dir, 'tissue_abbrev.Rdata'))
+assay_abbrev <- load(file.path(data_dir, 'assay_abbrev.Rdata'))
+metab_norm_data_flat <- load(file.path(data_dir, 'metab_norm_data_flat.Rdata'))
+immuno_norm_data_flat <- load(file.path(data_dir, 'immuno_norm_data_flat.Rdata'))
+outliers <- load(file.path(data_dir, 'outliers.Rdata'))
+available_data <- load(file.path(data_dir, 'available_data.Rdata'))
+
+load_sample_data = function(tissue, 
+                            assay, 
+                            normalized = TRUE, 
+                            training_regulated_only = FALSE, 
+                            exclude_outliers = FALSE, 
+                            scratchdir = ".", 
+                            nrows = Inf,
+                            warnings = TRUE){
+  
+  # check inputs 
+  if(!tissue %in% tissue_abbrev){
+    stop(sprintf("'tissue' must be one of TISSUE_ABBREV: \n %s", 
+                 paste(tissue_abbrev, collapse=", ")))
+  }
+  if(!assay %in% assay_abbrev){
+    stop(sprintf("'assay' must be one of ASSAY_ABBREV: \n %s", 
+                 paste(assay_abbrev, collapse=", ")))
+  }
+  
+  # add available epigen data
+  possible_tissues = c(
+    'BAT',
+    'HEART',
+    'HIPPOC',
+    'KIDNEY',
+    'LIVER',
+    'LUNG',
+    'SKMGN',
+    'WATSC'
+  )
+  # norm data 
+  available_data = c(available_data, paste0(rep(c("ATAC", "METHYL"), each=8), "_", rep(possible_tissues,2), "_NORM_DATA"))
+  # counts
+  available_data = c(available_data, paste0(rep(c("ATAC", "METHYL"), each=8), "_", rep(possible_tissues,2), "_RAW_COUNTS"))
+  
+  data = NULL
+  if(normalized){
+    # normalized data
+    if(assay %in% c("METHYL","ATAC")){
+      if(training_regulated_only){
+        obj_name = sprintf("%s_%s_NORM_DATA_05FDR", assay, gsub("-","",tissue))
+        if(obj_name %in% available_data){
+          message(obj_name)
+          data = .get(obj_name)
+        }
+      }else{
+        # download from GCS
+        obj_name = sprintf("%s_%s_NORM_DATA", assay, gsub("-","",tissue))
+        if(obj_name %in% available_data){
+          message(obj_name)
+          data = get_rdata_from_url(tissue=tissue, assay=assay, suffix="NORM_DATA", scratchdir=scratchdir, nrows=nrows)
+        }
+      }
+    }else if(assay == "METAB"){
+      # get combined sample-level data
+      message(sprintf("METAB %s normalized data from METAB_NORM_DATA_FLAT", tissue))
+      data = metab_norm_data_flat
+      # filter to this tissue
+      data = data[data$tissue == tissue,]
+      # remove all-NA columns 
+      data[,names(colSums(is.na(data))[colSums(is.na(data)) == nrow(data)])] = NULL
+    }else if(assay == "IMMUNO"){
+      # get combined sample-level data
+      message(sprintf("IMMUNO %s normalized data from IMMUNO_NORM_DATA_FLAT", tissue))
+      data = immuno_norm_data_flat
+      # filter to this tissue
+      data = data[data$tissue == tissue,]
+      # remove all-NA columns 
+      data[,names(colSums(is.na(data))[colSums(is.na(data)) == nrow(data)])] = NULL
+    }else{
+      obj_name = sprintf("%s_%s_NORM_DATA", assay, gsub("-","",tissue))
+      if(obj_name %in% available_data){
+        message(obj_name)
+        data = .get(obj_name)
+      }
+    }
+  }else{
+    # raw data 
+    if(assay %in% c("METHYL","ATAC","TRNSCRPT")){
+      if(assay %in% c("METHYL","ATAC")){
+        # download from GCS
+        obj_name = sprintf("%s_%s_RAW_COUNTS", assay, gsub("-","",tissue))
+        if(obj_name %in% available_data){
+          message(obj_name)
+          data = get_rdata_from_url(tissue=tissue, assay=assay, suffix="RAW_COUNTS", scratchdir=scratchdir, nrows=nrows)
+        }
+      }else{
+        obj_name = sprintf("%s_%s_RAW_COUNTS", assay, gsub("-","",tissue))
+        if(obj_name %in% available_data){
+          message(obj_name)
+          data = .get(obj_name)
+        }
+      }
+    }else{
+      if(warnings){
+        warning(sprintf("Non-normalized data not available for %s. Set 'normalized' to TRUE to get normalized sample-level data.", assay))
+      }
+      return()
+    }
+  }
+  
+  if(is.null(data)){
+    if(warnings){
+      warning(sprintf("No data returned for tissue %s and assay %s with current arguments.", tissue, assay))
+    }
+    return()
+  }
+  
+  # apply optional filters
+  if(training_regulated_only){
+    data = data[!is.na(data$feature),]
+  }
+  if(nrows < Inf){
+    if(nrows > nrow(data)){
+      data = data[1:nrows,]
+    }
+  }
+  if(exclude_outliers){
+    outliers = data.table::data.table(outliers)
+    .assay = assay
+    .tissue = tissue
+    curr_outliers = stats::na.omit(outliers[assay == .assay & tissue == .tissue, viallabel])
+    if(.tissue == "VENACV"){
+      curr_outliers = c(curr_outliers, na.omit(outliers[tissue == .tissue, viallabel]))
+    }
+    curr_outliers = unique(curr_outliers)
+    if(length(curr_outliers)>0){
+      data[,curr_outliers] = NULL
+    }
+  }
+  
+  return(data)
+}
+
 ```
 
 

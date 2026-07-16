@@ -61,30 +61,16 @@ prot_files = dir(path = prot_dir, full.names = TRUE)
 
 ```{r echo=FALSE}
 # Base project directory.
-base_dir  = './sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-# Metadata directory.
-meta_file = file.path(data_dir, 'motrpac_metadata.csv')  
-
-# RNA file directory.
-rna_dir   = file.path(data_dir, 'rna')  
-
-# RNA files.
-rna_files = dir(path = rna_dir, full.names = TRUE)
-
-# Protein file directory.
-prot_dir  = file.path(data_dir, 'protein')  
-
-# Protein files.
-prot_files = dir(path = prot_dir, full.names = TRUE) 
+base_dir  = './sbgenomics/workspace' # use this path with "./" when working
+                                     # in Workbench repo episodes directory
 ```
 
 ### Sample Metadata
 
-First, we will read in the sample metadata file. A [metadata](../learners/reference.md) file contains information about the data, for example, the sex, age, and type of sample. In this case, we will extract the sex and treatment groups for the rats.
+First, we will read in the sample metadata file. A 
+[metadata](../learners/reference.md) file contains information about the data, 
+for example, the sex, age, and type of sample. In this case, we will extract the 
+sex and treatment groups for the rats.
 
 ```{r}
 meta = read_csv(meta_file, col_types = 'cccccc')
@@ -284,7 +270,8 @@ ldngs |>
 Do we have any other data that we could use to figure out whether the kidney 
 data is "good" or not? Perhaps the rat has kidney disease and really is quite 
 different from the other rats. Or perhaps the rat has an infection. We can't 
-remove this data point on our own, but we can gather evidence to present to the investigator to make a decision.
+remove this data point on our own, but we can gather evidence to present to the 
+investigator to make a decision.
 
 We have transcript data in other tissues and protein data in the same tissues. 
 What if we look at the other data and see if the same rat is an outlier in other
