@@ -52,12 +52,12 @@ Choose the free RStudio Desktop version for Windows, Mac, or Linux.
 4. Install R and Bioconductor packages. 
 
 ```r
-install.packages(c("tidyverse", "ggrepel"))
+install.packages(c("tidyverse", "ggrepel", "devtools"))
 
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
-BiocManager::install(c("pcaMethods", ))
+BiocManager::install(c("pcaMethods", "edgeR", "MOFA2"))
 
 ```
 
@@ -67,7 +67,10 @@ installed correctly.
 ```r
 library(tidyverse)
 library(ggrepel)
+library(devtools)
 library(pcaMethods)
+library(edgeR)
+library(MOFA2)
 
 ```
 
