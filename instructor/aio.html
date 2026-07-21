@@ -769,7 +769,7 @@ the data has been transformed and processed?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The data is <em>NOT</em> RNASeq counts because it does not contain
 integers. It has gone through some type of processing or normalization.
@@ -906,7 +906,7 @@ treatment groups? Are there any odd points?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The data separate by sex on the PC2 axis. At this resolution, there
 are not large differences between treatment groups. There is one point,
@@ -999,7 +999,7 @@ for one tissue, get the sample metadata, and make a PCA plot.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Form the students into groups. Have some of them read in all of the
 transcript data, make a PCA plot, and compare it with the kidney
@@ -1198,13 +1198,13 @@ challenge blocks</li>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-Onyourowncomputer" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-Onyourowncomputer">
+<div id="nav-tabpanel-1-Onyourowncomputer" class="tab-pane show active" aria-labelledby="nav-tab-1-Onyourowncomputer" role="tabpanel">
 <p>1</p>
 </div>
-<div id="nav-tabpanel-1-OnCAVATICA" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-OnCAVATICA">
+<div id="nav-tabpanel-1-OnCAVATICA" class="tab-pane" aria-labelledby="nav-tab-1-OnCAVATICA" role="tabpanel">
 <p>base_dir = ‘/sbgenomics/workspace’</p>
 </div>
-<div id="nav-tabpanel-1-Baseprojectdirectory." class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-Baseprojectdirectory.">
+<div id="nav-tabpanel-1-Baseprojectdirectory." class="tab-pane" aria-labelledby="nav-tab-1-Baseprojectdirectory." role="tabpanel">
 <p>data_dir = file.path(base_dir, ‘data’)</p>
 </div>
 </div>
@@ -1223,10 +1223,10 @@ challenge blocks</li>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-Onyourowncomputer" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-Onyourowncomputer">
+<div id="nav-tabpanel-2-Onyourowncomputer" class="tab-pane show active" aria-labelledby="nav-tab-2-Onyourowncomputer" role="tabpanel">
 <p>4</p>
 </div>
-<div id="nav-tabpanel-2-OnCAVATICA" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-OnCAVATICA">
+<div id="nav-tabpanel-2-OnCAVATICA" class="tab-pane" aria-labelledby="nav-tab-2-OnCAVATICA" role="tabpanel">
 <p>5</p>
 </div>
 </div>
@@ -2043,8 +2043,8 @@ values will be loaded.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1501424 80.2    2799150 149.5  2799150 149.5
-Vcells 2791179 21.3    8388608  64.0  4398583  33.6</code></pre>
+Ncells 1501424 80.2    2799170 149.5  2799170 149.5
+Vcells 2791179 21.3    8388608  64.0  4398795  33.6</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -3094,8 +3094,8 @@ universal training adaptations compared to a global analysis.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1571908 84.0    2799150 149.5  2799150 149.5
-Vcells 2914309 22.3    8388608  64.0  4398583  33.6</code></pre>
+Ncells 1571908 84.0    2799170 149.5  2799170 149.5
+Vcells 2914309 22.3    8388608  64.0  4398795  33.6</code></pre>
 </div>
 </div>
 <div class="section level1">
