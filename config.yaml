@@ -67,8 +67,8 @@ contact: 'susan.mcclatchy@jax.org'
 # Order of episodes in your lesson
 episodes: 
 - introduction.Rmd
-- multiomics-data-integration.Rmd
 - data_qc.Rmd
+- mofa.Rmd
 
 # Information for Learners
 learners: 
