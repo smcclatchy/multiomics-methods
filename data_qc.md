@@ -161,7 +161,7 @@ analysis.
 
 We have reformatted some of the MoTrPAC transcript files to make them easier to 
 read in for this tutorial. We have converted them to numeric matrices and saved 
-them in [\[RDS\]](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS%5D%5BRDS%5D)(https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS) format. RDS is a binary, compressed format for storing R objects.
+them in [RDS](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS) format. RDS is a binary, compressed format for storing R objects.
 
 
 ``` r
