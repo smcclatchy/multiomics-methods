@@ -325,7 +325,7 @@
         
 <section id="aio-introduction"><p>Content from <a href="introduction.html">Multiomics Data Analysis</a></p>
 <hr>
-<p>Last updated on 2026-07-21 |
+<p>Last updated on 2026-07-23 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/introduction.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -391,7 +391,7 @@ website.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -420,7 +420,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -498,7 +498,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-data_qc"><p>Content from <a href="data_qc.html">Omics QC</a></p>
 <hr>
-<p>Last updated on 2026-07-21 |
+<p>Last updated on 2026-07-23 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/data_qc.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -564,7 +564,7 @@ gone through these procedures.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -585,7 +585,7 @@ gone through these procedures.</p>
 <span><span class="va">prot_files</span> <span class="op">=</span> <span class="fu">dir</span><span class="op">(</span>path <span class="op">=</span> <span class="va">prot_dir</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -696,7 +696,7 @@ factor in our analysis.</p>
 </h3>
 <p>We have reformatted some of the MoTrPAC transcript files to make them
 easier to read in for this tutorial. We have converted them to numeric
-matrices and saved them in <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS%5D%5BRDS%5D" class="external-link"><span class="math display">\[RDS\]</span></a>(<a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS" class="external-link uri">https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS</a>)
+matrices and saved them in <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/readRDS" class="external-link">RDS</a>
 format. RDS is a binary, compressed format for storing R objects.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -765,7 +765,7 @@ the data has been transformed and processed?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The data is <em>NOT</em> RNASeq counts because it does not contain
 integers. It has gone through some type of processing or normalization.
@@ -902,7 +902,7 @@ treatment groups? Are there any odd points?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The data separate by sex on the PC2 axis. At this resolution, there
 are not large differences between treatment groups. There is one point,
@@ -1119,7 +1119,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-mofa"><p>Content from <a href="mofa.html">Multi-omics factor analysis (MOFA)</a></p>
 <hr>
-<p>Last updated on 2026-07-21 |
+<p>Last updated on 2026-07-23 |
 
         <a href="https://github.com/carpentries/workbench-template-rmd/edit/main/episodes/mofa.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2022,8 +2022,8 @@ values will be loaded.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1501424 80.2    2799170 149.5  2799170 149.5
-Vcells 2791179 21.3    8388608  64.0  4398795  33.6</code></pre>
+Ncells 1501424 80.2    2799160 149.5  2799160 149.5
+Vcells 2791179 21.3    8388608  64.0  4396768  33.6</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -3073,8 +3073,8 @@ universal training adaptations compared to a global analysis.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1571908 84.0    2799170 149.5  2799170 149.5
-Vcells 2914309 22.3    8388608  64.0  4398795  33.6</code></pre>
+Ncells 1571908 84.0    2799160 149.5  2799160 149.5
+Vcells 2914309 22.3    8388608  64.0  4396768  33.6</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -4345,8 +4345,8 @@ any links that you are not going to use.
   "url": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "identifier": "https://carpentries.github.io/workbench-template-rmd/aio.html",
   "dateCreated": "2026-03-02",
-  "dateModified": "2026-07-21",
-  "datePublished": "2026-07-21"
+  "dateModified": "2026-07-23",
+  "datePublished": "2026-07-23"
 }
 
   </script><script>
