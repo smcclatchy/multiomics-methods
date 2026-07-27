@@ -475,7 +475,7 @@ this_tissue <- "SKM-GN"
 # organize the sample meta data
 #------------------------------
 
-meta <- load("data/motrpac_rat_pheno_wide.rds")
+meta <- readRDS("data/motrpac_rat_pheno_wide.rds")
 meta <- meta %>% select(pid, sex, group, 
                         vo2.max.test.vo2_max_2, 
                         nmr.testing.nmr_lean_2 )
