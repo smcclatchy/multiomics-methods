@@ -379,44 +379,15 @@ this_tissue <- "SKM-GN"
 # organize the sample meta data
 #------------------------------
 
-meta <- load("data/motrpac_rat_pheno_wide.rds")
-```
-
-``` error
-Error in `load()`:
-! bad restore file magic number (file may be corrupted) -- no data loaded
-```
-
-``` r
+meta <- readRDS("data/motrpac_rat_pheno_wide.rds")
 meta <- meta %>% select(pid, sex, group, 
                         vo2.max.test.vo2_max_2, 
                         nmr.testing.nmr_lean_2 )
-```
 
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 meta <- meta %>% filter(group %in% c("control", "4w", "8w"))
-```
-
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 experiment_pids <- meta$pid %>% as.character()
-```
 
-``` error
-Error:
-! object 'meta' not found
-```
 
-``` r
 #------------------------------
 # load the transcriptomic data
 #------------------------------
@@ -680,20 +651,12 @@ Error:
 
 ``` r
 row.names(meta) <- meta$pid
-```
-
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 selected_meta <- meta[keep_samples, ]
 ```
 
 ``` error
 Error:
-! object 'meta' not found
+! object 'keep_samples' not found
 ```
 
 ``` r
@@ -722,8 +685,8 @@ gc()
 
 ``` output
           used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1501452 80.2    2788148  149  2788148 149.0
-Vcells 2791397 21.3    8388608   64  4603048  35.2
+Ncells 1528513 81.7    2788788  149  2788788 149.0
+Vcells 2851092 21.8    8388608   64  4602600  35.2
 ```
 
 # Feature Selection
@@ -1228,32 +1191,11 @@ Error in `load()`:
 
 ``` r
 meta <- meta %>% select(pid, sex, group, vo2.max.test.vo2_max_2, nmr.testing.nmr_lean_2 )
-```
 
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 meta <- meta %>% filter(group %in% c("control", "4w", "8w"))
-```
-
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 experiment_pids <- meta$pid %>% as.character()
-```
 
-``` error
-Error:
-! object 'meta' not found
-```
 
-``` r
 #------------------------------
 # load the transcriptomic data
 #------------------------------
@@ -1517,20 +1459,12 @@ Error:
 
 ``` r
 row.names(meta) <- meta$pid
-```
-
-``` error
-Error:
-! object 'meta' not found
-```
-
-``` r
 selected_meta <- meta[keep_samples, ]
 ```
 
 ``` error
 Error:
-! object 'meta' not found
+! object 'keep_samples' not found
 ```
 
 ``` r
@@ -1559,8 +1493,8 @@ gc()
 
 ``` output
           used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1571936 84.0    2788148  149  2788148 149.0
-Vcells 2914521 22.3    8388608   64  4603048  35.2
+Ncells 1599019 85.4    2788788  149  2788788 149.0
+Vcells 2974226 22.7    8388608   64  4602600  35.2
 ```
 
 # Feature Selection
