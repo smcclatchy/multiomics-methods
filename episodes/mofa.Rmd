@@ -17,33 +17,6 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::: group-tab
-
-### On your own computer
-
-1
-
-### On CAVATICA
-
-# Base project directory.
-base_dir  = '/sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-:::
-
-::: group-tab
-
-### On your own computer
-
-4
-
-### On CAVATICA
-
-5
-
-:::
 
 ```{r warning=FALSE, echo=FALSE}
 # library(devtools)
@@ -431,11 +404,11 @@ Let's load our R packages:
 #| warning: false
 #| message: false
 
-# library(reticulate)
-# use_python("/usr/bin/python3", required = TRUE)
+library(reticulate)
+use_python("/usr/bin/python3", required = TRUE)
 
 # check that python mofapy2 package is installed
-# py_module_available("mofapy2")
+py_module_available("mofapy2")
 
 # library(MotrpacRatTraining6mo)
 library(MOFA2)
@@ -450,6 +423,47 @@ For this analysis, we will only include high-quality matched pairs (samples with
 both RNA and protein data). For RNA, raw counts will be loaded and we will 
 normalize the samples and perform a log transformation. For protein, complete 
 normalized data with imputed values will be loaded.
+
+::: group-tab
+
+### On your own computer
+
+# Metadata file.
+meta_file = 'data/motrpac_metadata.csv'
+
+# RNA file directory.
+rna_dir   = 'data/rna'
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = 'data/protein'  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE)
+
+### On CAVATICA
+
+# Base project directory.
+base_dir  = '/sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+:::
+
+::: group-tab
+
+### On your own computer
+
+4
+
+### On CAVATICA
+
+5
+
+:::
 
 ```{r}
 #| warning: false
