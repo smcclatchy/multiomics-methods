@@ -17,33 +17,6 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::: group-tab
-
-### On your own computer
-
-1
-
-### On CAVATICA
-
-# Base project directory.
-base_dir  = '/sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-:::
-
-::: group-tab
-
-### On your own computer
-
-4
-
-### On CAVATICA
-
-5
-
-:::
 
 
 ``` error
@@ -302,12 +275,34 @@ Let's load our R packages:
 
 
 ``` r
-# library(reticulate)
-# use_python("/usr/bin/python3", required = TRUE)
+library(reticulate)
+```
 
+``` error
+Error in `library()`:
+! there is no package called 'reticulate'
+```
+
+``` r
+use_python("/usr/bin/python3", required = TRUE)
+```
+
+``` error
+Error in `use_python()`:
+! could not find function "use_python"
+```
+
+``` r
 # check that python mofapy2 package is installed
-# py_module_available("mofapy2")
+py_module_available("mofapy2")
+```
 
+``` error
+Error in `py_module_available()`:
+! could not find function "py_module_available"
+```
+
+``` r
 # library(MotrpacRatTraining6mo)
 library(MOFA2)
 ```
@@ -333,6 +328,47 @@ For this analysis, we will only include high-quality matched pairs (samples with
 both RNA and protein data). For RNA, raw counts will be loaded and we will 
 normalize the samples and perform a log transformation. For protein, complete 
 normalized data with imputed values will be loaded.
+
+::: group-tab
+
+### On your own computer
+
+# Metadata file.
+meta_file = 'data/motrpac_metadata.csv'
+
+# RNA file directory.
+rna_dir   = 'data/rna'
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = 'data/protein'  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE)
+
+### On CAVATICA
+
+# Base project directory.
+base_dir  = '/sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+:::
+
+::: group-tab
+
+### On your own computer
+
+4
+
+### On CAVATICA
+
+5
+
+:::
 
 
 ``` r
@@ -685,9 +721,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1501424 80.2    2799160 149.5  2799160 149.5
-Vcells 2791179 21.3    8388608  64.0  4396768  33.6
+          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1501452 80.2    2788148  149  2788148 149.0
+Vcells 2791397 21.3    8388608   64  4603048  35.2
 ```
 
 # Feature Selection
@@ -1522,9 +1558,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1571908 84.0    2799160 149.5  2799160 149.5
-Vcells 2914309 22.3    8388608  64.0  4396768  33.6
+          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1571936 84.0    2788148  149  2788148 149.0
+Vcells 2914521 22.3    8388608   64  4603048  35.2
 ```
 
 # Feature Selection
