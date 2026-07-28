@@ -765,7 +765,7 @@ the data has been transformed and processed?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The data is <em>NOT</em> RNASeq counts because it does not contain
 integers. It has gone through some type of processing or normalization.
@@ -902,7 +902,7 @@ treatment groups? Are there any odd points?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The data separate by sex on the PC2 axis. At this resolution, there
 are not large differences between treatment groups. There is one point,
@@ -1133,8 +1133,9 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>What is multi-omics factor analysis (MOFA)?</li>
+<li>How is MOFA used?</li>
+<li>What are the differences between MOFA and PCA?</li>
 </ul>
 </div>
 </div>
@@ -1144,9 +1145,15 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Prepare data and run MOFA using the MOFA2 R package.</li>
+<li>Interpret variance explained by factor and view.</li>
+<li>Correlate factors with phenotypes.</li>
+<li>Determine how many factors to use in an analysis.</li>
+<li>Run MOFA2 using group variable.</li>
+<li>Identify a ‘Fitness’ factor linked to VO2 max.</li>
+<li>Perform gene set enrichment analysis using factor weights.</li>
+<li>Identify concordant mRNA and protein drivers of the ‘Fitness’ factor
+.</li>
 </ul>
 </div>
 </div>
@@ -1156,103 +1163,6 @@ challenge blocks</li>
 <div class="section level1">
 <h1 id="setting-up">Setting up<a class="anchor" aria-label="anchor" href="#setting-up"></a>
 </h1>
-<div class="tabs">
-<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
-<button class="nav-link active" id="nav-tab-1-Onyourowncomputer" name="Onyourowncomputer" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Onyourowncomputer" type="button" role="tab" aria-controls="nav-tabpanel-1-Onyourowncomputer" aria-selected="true">
-  <h3 class="tab-header" id="nav-tab-heading-1-Onyourowncomputer">
-  On your own computer
-  </h3>
-</button>
-<button class="nav-link" id="nav-tab-1-Metadatafile." name="Metadatafile." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Metadatafile." type="button" role="tab" aria-controls="nav-tabpanel-1-Metadatafile." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-Metadatafile.">
-  Metadata file.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-RNAfiledirectory." name="RNAfiledirectory." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-RNAfiledirectory." type="button" role="tab" aria-controls="nav-tabpanel-1-RNAfiledirectory." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-RNAfiledirectory.">
-  RNA file directory.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-RNAfiles." name="RNAfiles." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-RNAfiles." type="button" role="tab" aria-controls="nav-tabpanel-1-RNAfiles." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-RNAfiles.">
-  RNA files.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-Proteinfiledirectory." name="Proteinfiledirectory." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Proteinfiledirectory." type="button" role="tab" aria-controls="nav-tabpanel-1-Proteinfiledirectory." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-Proteinfiledirectory.">
-  Protein file directory.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-Proteinfiles." name="Proteinfiles." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Proteinfiles." type="button" role="tab" aria-controls="nav-tabpanel-1-Proteinfiles." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-Proteinfiles.">
-  Protein files.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-OnCAVATICA" name="OnCAVATICA" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-OnCAVATICA" type="button" role="tab" aria-controls="nav-tabpanel-1-OnCAVATICA" aria-selected="false">
-  <h3 class="tab-header" id="nav-tab-heading-1-OnCAVATICA">
-  On CAVATICA
-  </h3>
-</button>
-<button class="nav-link" id="nav-tab-1-Baseprojectdirectory." name="Baseprojectdirectory." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Baseprojectdirectory." type="button" role="tab" aria-controls="nav-tabpanel-1-Baseprojectdirectory." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-Baseprojectdirectory.">
-  Base project directory.
-  </h1>
-</button>
-<button class="nav-link" id="nav-tab-1-Datadirectory." name="Datadirectory." data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-Datadirectory." type="button" role="tab" aria-controls="nav-tabpanel-1-Datadirectory." aria-selected="false">
-  <h1 class="tab-header" id="nav-tab-heading-1-Datadirectory.">
-  Data directory.
-  </h1>
-</button>
-</div>
-</nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-Onyourowncomputer" class="tab-pane show active" aria-labelledby="nav-tab-1-Onyourowncomputer" role="tabpanel">
-
-</div>
-<div id="nav-tabpanel-1-Metadatafile." class="tab-pane" aria-labelledby="nav-tab-1-Metadatafile." role="tabpanel">
-<p>meta_file = ‘data/motrpac_metadata.csv’</p>
-</div>
-<div id="nav-tabpanel-1-RNAfiledirectory." class="tab-pane" aria-labelledby="nav-tab-1-RNAfiledirectory." role="tabpanel">
-<p>rna_dir = ‘data/rna’</p>
-</div>
-<div id="nav-tabpanel-1-RNAfiles." class="tab-pane" aria-labelledby="nav-tab-1-RNAfiles." role="tabpanel">
-<p>rna_files = dir(path = rna_dir, full.names = TRUE)</p>
-</div>
-<div id="nav-tabpanel-1-Proteinfiledirectory." class="tab-pane" aria-labelledby="nav-tab-1-Proteinfiledirectory." role="tabpanel">
-<p>prot_dir = ‘data/protein’</p>
-</div>
-<div id="nav-tabpanel-1-Proteinfiles." class="tab-pane" aria-labelledby="nav-tab-1-Proteinfiles." role="tabpanel">
-<p>prot_files = dir(path = prot_dir, full.names = TRUE)</p>
-</div>
-<div id="nav-tabpanel-1-OnCAVATICA" class="tab-pane" aria-labelledby="nav-tab-1-OnCAVATICA" role="tabpanel">
-<p>base_dir = ‘/sbgenomics/workspace’</p>
-</div>
-<div id="nav-tabpanel-1-Baseprojectdirectory." class="tab-pane" aria-labelledby="nav-tab-1-Baseprojectdirectory." role="tabpanel">
-<p>data_dir = file.path(base_dir, ‘data’)</p>
-</div>
-</div>
-</div>
-<div class="tabs">
-<nav><div id="nav-tab-2" class="nav nav-tabs" role="tablist">
-<button class="nav-link active" id="nav-tab-2-Onyourowncomputer" name="Onyourowncomputer" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-Onyourowncomputer" type="button" role="tab" aria-controls="nav-tabpanel-2-Onyourowncomputer" aria-selected="true">
-  <h3 class="tab-header" id="nav-tab-heading-2-Onyourowncomputer">
-  On your own computer
-  </h3>
-</button>
-<button class="nav-link" id="nav-tab-2-OnCAVATICA" name="OnCAVATICA" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-2-OnCAVATICA" type="button" role="tab" aria-controls="nav-tabpanel-2-OnCAVATICA" aria-selected="false">
-  <h3 class="tab-header" id="nav-tab-heading-2-OnCAVATICA">
-  On CAVATICA
-  </h3>
-</button>
-</div>
-</nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-Onyourowncomputer" class="tab-pane show active" aria-labelledby="nav-tab-2-Onyourowncomputer" role="tabpanel">
-<p>4</p>
-</div>
-<div id="nav-tabpanel-2-OnCAVATICA" class="tab-pane" aria-labelledby="nav-tab-2-OnCAVATICA" role="tabpanel">
-<p>5</p>
-</div>
-</div>
-</div>
 <p>Let’s load our R packages:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1391,70 +1301,6 @@ gene-to-protein correlation. By analyzing the concordant (synchronized)
 and discordant (divergent) drivers within a factor, we can distinguish
 between the core genetic programs and the post-translational tuning that
 ultimately shapes physiology.</p>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What is multi-omics factor analysis (MOFA)?</li>
-<li>How is MOFA used?</li>
-<li>What are the differences between MOFA and PCA?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What is multi-omics factor analysis (MOFA)?</li>
-<li>How is MOFA used?</li>
-<li>What are the differences between MOFA and PCA?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Prepare data and run MOFA using the MOFA2 R package.</li>
-<li>Interpret variance explained by factor and view.</li>
-<li>Correlate factors with phenotypes.</li>
-<li>Determine how many factors to use in an analysis.</li>
-<li>Run MOFA2 using group variable.</li>
-<li>Identify a ‘Fitness’ factor linked to VO2 max.</li>
-<li>Perform gene set enrichment analysis using factor weights.</li>
-<li>Identify concordant mRNA and protein drivers of the ‘Fitness’ factor
-.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="section level1">
 <h1 id="background-motivation-1">Background &amp; Motivation<a class="anchor" aria-label="anchor" href="#background-motivation-1"></a>
@@ -1988,8 +1834,8 @@ values will be loaded.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1528543 81.7    2729854 145.8  2729854 145.8
-Vcells 2851071 21.8    8388608  64.0  4363214  33.3</code></pre>
+Ncells 1528529 81.7    2729888 145.8  2729888 145.8
+Vcells 2850791 21.8    8388608  64.0  4338843  33.2</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -3000,8 +2846,8 @@ universal training adaptations compared to a global analysis.</p>
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1599055 85.4    2729854 145.8  2729854 145.8
-Vcells 2974224 22.7    8388608  64.0  4363214  33.3</code></pre>
+Ncells 1599041 85.4    2729888 145.8  2729888 145.8
+Vcells 2973944 22.7    8388608  64.0  4338843  33.2</code></pre>
 </div>
 </div>
 <div class="section level1">
