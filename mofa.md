@@ -17,38 +17,88 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+# Setting up
+
+::: group-tab
+
+### On your own computer
+
+# Metadata file.
+meta_file = 'data/motrpac_metadata.csv'
+
+# RNA file directory.
+rna_dir   = 'data/rna'
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = 'data/protein'  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE)
+
+### On CAVATICA
+
+# Base project directory.
+base_dir  = '/sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+:::
+
+::: group-tab
+
+### On your own computer
+
+4
+
+### On CAVATICA
+
+5
+
+:::
 
 
-``` error
-Error in `readChar()`:
-! cannot open the connection
+
+Let's load our R packages:
+
+
+``` r
+library(MOFA2)
 ```
 
 ``` error
-Error in `readChar()`:
-! cannot open the connection
+Error in `library()`:
+! there is no package called 'MOFA2'
+```
+
+``` r
+library(tidyverse)
+```
+
+``` output
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+```
+
+``` r
+library(edgeR) # use for RNA normalization functions
 ```
 
 ``` error
-Error in `readChar()`:
-! cannot open the connection
+Error in `library()`:
+! there is no package called 'edgeR'
 ```
-
-``` error
-Error in `readChar()`:
-! cannot open the connection
-```
-
-``` error
-Error in `readChar()`:
-! cannot open the connection
-```
-
-``` error
-Error in `readChar()`:
-! cannot open the connection
-```
-
 
 # Background & Motivation
 
@@ -269,59 +319,6 @@ The `MOFA2` workflow follows a structured four-step pipeline:
 4.  **Downstream Analysis:** Visualizing the shared and private biological signals.
 :::
 
-# Setting up the Data
-
-Let's load our R packages:
-
-
-``` r
-library(reticulate)
-```
-
-``` error
-Error in `library()`:
-! there is no package called 'reticulate'
-```
-
-``` r
-use_python("/usr/bin/python3", required = TRUE)
-```
-
-``` error
-Error in `use_python()`:
-! could not find function "use_python"
-```
-
-``` r
-# check that python mofapy2 package is installed
-py_module_available("mofapy2")
-```
-
-``` error
-Error in `py_module_available()`:
-! could not find function "py_module_available"
-```
-
-``` r
-# library(MotrpacRatTraining6mo)
-library(MOFA2)
-```
-
-``` error
-Error in `library()`:
-! there is no package called 'MOFA2'
-```
-
-``` r
-library(tidyverse)
-library(edgeR) # use for RNA normalization functions
-```
-
-``` error
-Error in `library()`:
-! there is no package called 'edgeR'
-```
-
 Let's load our samples:
 
 For this analysis, we will only include high-quality matched pairs (samples with 
@@ -329,46 +326,7 @@ both RNA and protein data). For RNA, raw counts will be loaded and we will
 normalize the samples and perform a log transformation. For protein, complete 
 normalized data with imputed values will be loaded.
 
-::: group-tab
 
-### On your own computer
-
-# Metadata file.
-meta_file = 'data/motrpac_metadata.csv'
-
-# RNA file directory.
-rna_dir   = 'data/rna'
-
-# RNA files.
-rna_files = dir(path = rna_dir, full.names = TRUE)
-
-# Protein file directory.
-prot_dir  = 'data/protein'  
-
-# Protein files.
-prot_files = dir(path = prot_dir, full.names = TRUE)
-
-### On CAVATICA
-
-# Base project directory.
-base_dir  = '/sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-:::
-
-::: group-tab
-
-### On your own computer
-
-4
-
-### On CAVATICA
-
-5
-
-:::
 
 
 ``` r
@@ -399,7 +357,8 @@ rna_data <- load_sample_data(this_tissue, "TRNSCRPT",
 
 ``` error
 Error in `load_sample_data()`:
-! object 'tissue_abbrev' not found
+! 'tissue' must be one of TISSUE_ABBREV: 
+ tissue_abbrev
 ```
 
 ``` r
@@ -511,7 +470,8 @@ prot_data <- load_sample_data(this_tissue, "PROT",
 
 ``` error
 Error in `load_sample_data()`:
-! object 'tissue_abbrev' not found
+! 'tissue' must be one of TISSUE_ABBREV: 
+ tissue_abbrev
 ```
 
 ``` r
@@ -684,9 +644,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1528513 81.7    2788160  149  2788160 149.0
-Vcells 2851092 21.8    8388608   64  4603175  35.2
+          used (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 1528543 81.7    2729854 145.8  2729854 145.8
+Vcells 2851071 21.8    8388608  64.0  4363214  33.3
 ```
 
 # Feature Selection
@@ -1207,7 +1167,8 @@ rna_data <- load_sample_data(this_tissue, "TRNSCRPT",
 
 ``` error
 Error in `load_sample_data()`:
-! object 'tissue_abbrev' not found
+! 'tissue' must be one of TISSUE_ABBREV: 
+ tissue_abbrev
 ```
 
 ``` r
@@ -1319,7 +1280,8 @@ prot_data <- load_sample_data(this_tissue, "PROT",
 
 ``` error
 Error in `load_sample_data()`:
-! object 'tissue_abbrev' not found
+! 'tissue' must be one of TISSUE_ABBREV: 
+ tissue_abbrev
 ```
 
 ``` r
@@ -1492,9 +1454,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1599019 85.4    2788160  149  2788160 149.0
-Vcells 2974226 22.7    8388608   64  4603175  35.2
+          used (Mb) gc trigger  (Mb) max used  (Mb)
+Ncells 1599055 85.4    2729854 145.8  2729854 145.8
+Vcells 2974224 22.7    8388608  64.0  4363214  33.3
 ```
 
 # Feature Selection

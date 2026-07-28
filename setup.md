@@ -49,11 +49,16 @@ Choose the free RStudio Desktop version for Windows, Mac, or Linux.
 
 3. Start RStudio. 
 
-4. Install R and Bioconductor packages. 
+4. Install packages from R, Github, and Bioconductor. 
 
 ```r
-install.packages(c("tidyverse", "ggrepel", "devtools"))
+install.packages(c("tidyverse", "ggrepel", "pak"))
+library(pak)
 
+# use `pak` to install the MoTrPAC analysis package and data
+pak::pkg_install("MoTrPAC/MotrpacRatTraining6mo")
+
+# install Bioconductor packages
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -67,7 +72,7 @@ installed correctly.
 ```r
 library(tidyverse)
 library(ggrepel)
-library(devtools)
+library(MotrpacRatTraining6mo)
 library(pcaMethods)
 library(edgeR)
 library(MOFA2)
