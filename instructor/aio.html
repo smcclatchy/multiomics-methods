@@ -568,7 +568,7 @@ gone through these procedures.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -589,7 +589,7 @@ gone through these procedures.</p>
 <span><span class="va">prot_files</span> <span class="op">=</span> <span class="fu">dir</span><span class="op">(</span>path <span class="op">=</span> <span class="va">prot_dir</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> </span></code></pre>
 </div>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1489,13 +1489,17 @@ values will be loaded.</p>
 <span>                             normalized<span class="op">=</span><span class="cn">FALSE</span>, exclude_outliers<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">TRNSCRPT_SKMGN_RAW_COUNTS</span></span></code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV:
- tissue_abbrev</code></pre>
+<pre class="error" tabindex="0"><code>Error in `get()`:
+! object 'TRNSCRPT_SKMGN_RAW_COUNTS' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1510,7 +1514,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1523,7 +1527,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `viallabel_to_pid()`:
 ! could not find function "viallabel_to_pid"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1535,7 +1539,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_pids' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb15">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1548,7 +1552,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1561,7 +1565,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `DGEList()`:
 ! could not find function "DGEList"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1574,7 +1578,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `filterByExpr()`:
 ! could not find function "filterByExpr"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1586,7 +1590,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'dge' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1599,7 +1603,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `calcNormFactors()`:
 ! could not find function "calcNormFactors"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1612,7 +1616,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `cpm()`:
 ! could not find function "cpm"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1632,13 +1636,17 @@ values will be loaded.</p>
 <span>                  normalized<span class="op">=</span><span class="cn">TRUE</span>, exclude_outliers<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">PROT_SKMGN_NORM_DATA</span></span></code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV:
- tissue_abbrev</code></pre>
+<pre class="error" tabindex="0"><code>Error in `get()`:
+! object 'PROT_SKMGN_NORM_DATA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1656,7 +1664,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb31">
+<div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1676,7 +1684,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1689,7 +1697,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb35">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1703,7 +1711,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb37">
+<div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1716,7 +1724,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error in `viallabel_to_pid()`:
 ! could not find function "viallabel_to_pid"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb39">
+<div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1728,7 +1736,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_pids' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb43">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1741,7 +1749,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb45">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1764,7 +1772,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb45">
+<div class="codewrapper sourceCode" id="cb47">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1776,7 +1784,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb47">
+<div class="codewrapper sourceCode" id="cb49">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1788,7 +1796,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_PROT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb49">
+<div class="codewrapper sourceCode" id="cb51">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1806,7 +1814,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb51">
+<div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1819,7 +1827,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'keep_samples' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb53">
+<div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1831,7 +1839,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb55">
+<div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1844,7 +1852,7 @@ values will be loaded.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb57">
+<div class="codewrapper sourceCode" id="cb59">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1854,9 +1862,9 @@ values will be loaded.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1528529 81.7    2729888 145.8  2729888 145.8
-Vcells 2850791 21.8    8388608  64.0  4338843  33.2</code></pre>
+<pre class="output" tabindex="0"><code>          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1535873 82.1    2750734  147  2750734 147.0
+Vcells 3803276 29.1    8388608   64  5332624  40.7</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -1869,7 +1877,7 @@ on real biological drivers faster and more accurately.</p>
 <div class="section level2">
 <h2 id="rna-feature-selection-by-variance">RNA feature selection (by variance):<a class="anchor" aria-label="anchor" href="#rna-feature-selection-by-variance"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb59">
+<div class="codewrapper sourceCode" id="cb61">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1883,7 +1891,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb61">
+<div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1896,7 +1904,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'gene_vars' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb63">
+<div class="codewrapper sourceCode" id="cb65">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1909,7 +1917,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb65">
+<div class="codewrapper sourceCode" id="cb67">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1925,7 +1933,7 @@ on real biological drivers faster and more accurately.</p>
 <div class="section level2">
 <h2 id="protein-feature-selection-median-absolute-deviation">Protein feature selection (median absolute deviation):<a class="anchor" aria-label="anchor" href="#protein-feature-selection-median-absolute-deviation"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb67">
+<div class="codewrapper sourceCode" id="cb69">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1939,7 +1947,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_PROT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb69">
+<div class="codewrapper sourceCode" id="cb71">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1952,7 +1960,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'protein_mads' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb71">
+<div class="codewrapper sourceCode" id="cb73">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1965,7 +1973,7 @@ on real biological drivers faster and more accurately.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_PROT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb73">
+<div class="codewrapper sourceCode" id="cb75">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1979,7 +1987,7 @@ on real biological drivers faster and more accurately.</p>
 </div>
 <p>Now that the data is selected, we need to format and label the data
 for MOFA2 specifically.</p>
-<div class="codewrapper sourceCode" id="cb75">
+<div class="codewrapper sourceCode" id="cb77">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1997,7 +2005,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb77">
+<div class="codewrapper sourceCode" id="cb79">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2009,7 +2017,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb79">
+<div class="codewrapper sourceCode" id="cb81">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2024,7 +2032,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb81">
+<div class="codewrapper sourceCode" id="cb83">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2037,7 +2045,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb83">
+<div class="codewrapper sourceCode" id="cb85">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2058,7 +2066,7 @@ for MOFA2 specifically.</p>
 <div class="section level2">
 <h2 id="step-1-create-the-mofa-object">Step 1: Create the MOFA object<a class="anchor" aria-label="anchor" href="#step-1-create-the-mofa-object"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb85">
+<div class="codewrapper sourceCode" id="cb87">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2074,7 +2082,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb87">
+<div class="codewrapper sourceCode" id="cb89">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2087,7 +2095,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error in `create_mofa()`:
 ! could not find function "create_mofa"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb89">
+<div class="codewrapper sourceCode" id="cb91">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2100,7 +2108,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb91">
+<div class="codewrapper sourceCode" id="cb93">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2124,7 +2132,7 @@ variation. More factors are reasonable. We can change the number of
 factors to increase the variance explained or reduce the correlation
 between factors if needed. Too many factors will lead to overfitting to
 noise and may steal biological signal.</p>
-<div class="codewrapper sourceCode" id="cb93">
+<div class="codewrapper sourceCode" id="cb95">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2136,7 +2144,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_model_options()`:
 ! could not find function "get_default_model_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb95">
+<div class="codewrapper sourceCode" id="cb97">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2148,7 +2156,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'model_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb97">
+<div class="codewrapper sourceCode" id="cb99">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2161,7 +2169,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_data_options()`:
 ! could not find function "get_default_data_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb99">
+<div class="codewrapper sourceCode" id="cb101">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2173,7 +2181,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'data_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb101">
+<div class="codewrapper sourceCode" id="cb103">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2185,7 +2193,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'data_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb103">
+<div class="codewrapper sourceCode" id="cb105">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2197,7 +2205,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_training_options()`:
 ! could not find function "get_default_training_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb105">
+<div class="codewrapper sourceCode" id="cb107">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2209,7 +2217,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'train_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb107">
+<div class="codewrapper sourceCode" id="cb109">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2221,7 +2229,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'train_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb109">
+<div class="codewrapper sourceCode" id="cb111">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2237,7 +2245,7 @@ noise and may steal biological signal.</p>
 <div class="section level2">
 <h2 id="step-3-build-and-train-the-model">Step 3: Build and train the model<a class="anchor" aria-label="anchor" href="#step-3-build-and-train-the-model"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb111">
+<div class="codewrapper sourceCode" id="cb113">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2254,7 +2262,7 @@ noise and may steal biological signal.</p>
 <pre class="error" tabindex="0"><code>Error in `prepare_mofa()`:
 ! could not find function "prepare_mofa"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb113">
+<div class="codewrapper sourceCode" id="cb115">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2278,7 +2286,7 @@ noise and may steal biological signal.</p>
 (<span class="math inline">\(R^2\)</span>), which allows us to quantify
 the strength of each factor and confirm that the model has captured
 meaningful information from both omic views.</p>
-<div class="codewrapper sourceCode" id="cb115">
+<div class="codewrapper sourceCode" id="cb117">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2300,7 +2308,7 @@ proteome captures the stable, physical reality of the muscle’s
 adaptation.</p>
 <p>Now that we have identified our core latent factors, we need to
 determine which ones actually relate to the biology of exercise.</p>
-<div class="codewrapper sourceCode" id="cb117">
+<div class="codewrapper sourceCode" id="cb119">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2317,7 +2325,7 @@ determine which ones actually relate to the biology of exercise.</p>
 <pre class="error" tabindex="0"><code>Error in `samples_metadata()`:
 ! could not find function "samples_metadata"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb119">
+<div class="codewrapper sourceCode" id="cb121">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2389,7 +2397,7 @@ universal training adaptations compared to a global analysis.</p>
 <h1 id="setting-up-the-data">Setting up the Data<a class="anchor" aria-label="anchor" href="#setting-up-the-data"></a>
 </h1>
 <p>Let’s load our R packages:</p>
-<div class="codewrapper sourceCode" id="cb121">
+<div class="codewrapper sourceCode" id="cb123">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2407,7 +2415,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `library()`:
 ! there is no package called 'MOFA2'</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb123">
+<div class="codewrapper sourceCode" id="cb125">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2420,7 +2428,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `library()`:
 ! there is no package called 'edgeR'</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb125">
+<div class="codewrapper sourceCode" id="cb127">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2432,7 +2440,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `library()`:
 ! there is no package called 'fgsea'</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb127">
+<div class="codewrapper sourceCode" id="cb129">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2447,7 +2455,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `library()`:
 ! there is no package called 'rrvgo'</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb129">
+<div class="codewrapper sourceCode" id="cb131">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2463,7 +2471,7 @@ universal training adaptations compared to a global analysis.</p>
 ! could not find function "load_feature_annotation"</code></pre>
 </div>
 <p>Let’s load our samples. This is the same as Part 1.</p>
-<div class="codewrapper sourceCode" id="cb131">
+<div class="codewrapper sourceCode" id="cb133">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2482,7 +2490,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `load()`:
 ! bad restore file magic number (file may be corrupted) -- no data loaded</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb133">
+<div class="codewrapper sourceCode" id="cb135">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2501,13 +2509,17 @@ universal training adaptations compared to a global analysis.</p>
 <span>                             normalized<span class="op">=</span><span class="cn">FALSE</span>, exclude_outliers<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">TRNSCRPT_SKMGN_RAW_COUNTS</span></span></code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV:
- tissue_abbrev</code></pre>
+<pre class="error" tabindex="0"><code>Error in `get()`:
+! object 'TRNSCRPT_SKMGN_RAW_COUNTS' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb135">
+<div class="codewrapper sourceCode" id="cb138">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2522,7 +2534,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb137">
+<div class="codewrapper sourceCode" id="cb140">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2535,7 +2547,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `viallabel_to_pid()`:
 ! could not find function "viallabel_to_pid"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb139">
+<div class="codewrapper sourceCode" id="cb142">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2547,7 +2559,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_pids' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb141">
+<div class="codewrapper sourceCode" id="cb144">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2560,7 +2572,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb143">
+<div class="codewrapper sourceCode" id="cb146">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2573,7 +2585,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `DGEList()`:
 ! could not find function "DGEList"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb145">
+<div class="codewrapper sourceCode" id="cb148">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2586,7 +2598,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `filterByExpr()`:
 ! could not find function "filterByExpr"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb147">
+<div class="codewrapper sourceCode" id="cb150">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2598,7 +2610,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'dge' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb149">
+<div class="codewrapper sourceCode" id="cb152">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2611,7 +2623,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `calcNormFactors()`:
 ! could not find function "calcNormFactors"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb151">
+<div class="codewrapper sourceCode" id="cb154">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2624,7 +2636,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `cpm()`:
 ! could not find function "cpm"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb153">
+<div class="codewrapper sourceCode" id="cb156">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2644,13 +2656,17 @@ universal training adaptations compared to a global analysis.</p>
 <span>                  normalized<span class="op">=</span><span class="cn">TRUE</span>, exclude_outliers<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code><span><span class="va">PROT_SKMGN_NORM_DATA</span></span></code></pre>
+</div>
+<div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV:
- tissue_abbrev</code></pre>
+<pre class="error" tabindex="0"><code>Error in `get()`:
+! object 'PROT_SKMGN_NORM_DATA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb155">
+<div class="codewrapper sourceCode" id="cb159">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2668,7 +2684,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb157">
+<div class="codewrapper sourceCode" id="cb161">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2688,7 +2704,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb159">
+<div class="codewrapper sourceCode" id="cb163">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2701,7 +2717,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb161">
+<div class="codewrapper sourceCode" id="cb165">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2715,7 +2731,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb163">
+<div class="codewrapper sourceCode" id="cb167">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2728,7 +2744,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error in `viallabel_to_pid()`:
 ! could not find function "viallabel_to_pid"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb165">
+<div class="codewrapper sourceCode" id="cb169">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2740,7 +2756,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_pids' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb167">
+<div class="codewrapper sourceCode" id="cb171">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2753,7 +2769,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_data' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb169">
+<div class="codewrapper sourceCode" id="cb173">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2776,7 +2792,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb171">
+<div class="codewrapper sourceCode" id="cb175">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2788,7 +2804,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb173">
+<div class="codewrapper sourceCode" id="cb177">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2800,7 +2816,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_PROT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb175">
+<div class="codewrapper sourceCode" id="cb179">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2818,7 +2834,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb177">
+<div class="codewrapper sourceCode" id="cb181">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2831,7 +2847,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'keep_samples' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb179">
+<div class="codewrapper sourceCode" id="cb183">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2843,7 +2859,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb181">
+<div class="codewrapper sourceCode" id="cb185">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2856,7 +2872,7 @@ universal training adaptations compared to a global analysis.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb183">
+<div class="codewrapper sourceCode" id="cb187">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2866,9 +2882,9 @@ universal training adaptations compared to a global analysis.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1599041 85.4    2729888 145.8  2729888 145.8
-Vcells 2973944 22.7    8388608  64.0  4338843  33.2</code></pre>
+<pre class="output" tabindex="0"><code>          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1606388 85.8    2750734  147  2750734 147.0
+Vcells 3926473 30.0    8388608   64  5332624  40.7</code></pre>
 </div>
 </div>
 <div class="section level1">
@@ -2896,7 +2912,7 @@ variance-based selection misses subtle but important signals.</p>
 <div class="section level2">
 <h2 id="rna-feature-selection">RNA feature selection:<a class="anchor" aria-label="anchor" href="#rna-feature-selection"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb185">
+<div class="codewrapper sourceCode" id="cb189">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2909,7 +2925,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb187">
+<div class="codewrapper sourceCode" id="cb191">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2922,7 +2938,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_split' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb189">
+<div class="codewrapper sourceCode" id="cb193">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2934,7 +2950,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_split' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb191">
+<div class="codewrapper sourceCode" id="cb195">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2947,7 +2963,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'var_males' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb193">
+<div class="codewrapper sourceCode" id="cb197">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2959,7 +2975,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'var_females' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb195">
+<div class="codewrapper sourceCode" id="cb199">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2971,7 +2987,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'hvg_m' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb197">
+<div class="codewrapper sourceCode" id="cb201">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2983,7 +2999,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_RNA' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb199">
+<div class="codewrapper sourceCode" id="cb203">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -2999,7 +3015,7 @@ variance-based selection misses subtle but important signals.</p>
 <div class="section level2">
 <h2 id="protein-feature-selection">Protein feature selection:<a class="anchor" aria-label="anchor" href="#protein-feature-selection"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb201">
+<div class="codewrapper sourceCode" id="cb205">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3012,7 +3028,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb203">
+<div class="codewrapper sourceCode" id="cb207">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3025,7 +3041,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_split' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb205">
+<div class="codewrapper sourceCode" id="cb209">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3037,7 +3053,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_split' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb207">
+<div class="codewrapper sourceCode" id="cb211">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3050,7 +3066,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'mad_males' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb209">
+<div class="codewrapper sourceCode" id="cb213">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3062,7 +3078,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'mad_females' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb211">
+<div class="codewrapper sourceCode" id="cb215">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3074,7 +3090,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'hvp_m' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb213">
+<div class="codewrapper sourceCode" id="cb217">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3087,7 +3103,7 @@ variance-based selection misses subtle but important signals.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'expression_filtered_PROT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb215">
+<div class="codewrapper sourceCode" id="cb219">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3102,7 +3118,7 @@ variance-based selection misses subtle but important signals.</p>
 </div>
 <p>Now that the data is selected, we need to format and label the data
 for MOFA2 specifically.</p>
-<div class="codewrapper sourceCode" id="cb217">
+<div class="codewrapper sourceCode" id="cb221">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3120,7 +3136,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb219">
+<div class="codewrapper sourceCode" id="cb223">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3132,7 +3148,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb221">
+<div class="codewrapper sourceCode" id="cb225">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3147,7 +3163,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb223">
+<div class="codewrapper sourceCode" id="cb227">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3160,7 +3176,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb225">
+<div class="codewrapper sourceCode" id="cb229">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3181,7 +3197,7 @@ for MOFA2 specifically.</p>
 <div class="section level2">
 <h2 id="step-1-create-the-mofa-object-1">Step 1: Create the MOFA object<a class="anchor" aria-label="anchor" href="#step-1-create-the-mofa-object-1"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb227">
+<div class="codewrapper sourceCode" id="cb231">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3200,7 +3216,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb229">
+<div class="codewrapper sourceCode" id="cb233">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3217,7 +3233,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'prot_view' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb231">
+<div class="codewrapper sourceCode" id="cb235">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3231,7 +3247,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'rna_df' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb233">
+<div class="codewrapper sourceCode" id="cb237">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3245,7 +3261,7 @@ for MOFA2 specifically.</p>
 <pre class="error" tabindex="0"><code>Error in `create_mofa()`:
 ! could not find function "create_mofa"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb235">
+<div class="codewrapper sourceCode" id="cb239">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3275,7 +3291,7 @@ persists even after accounting for sex variation.</p>
 <div class="section level2">
 <h2 id="step-2-define-options">Step 2: Define options<a class="anchor" aria-label="anchor" href="#step-2-define-options"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb237">
+<div class="codewrapper sourceCode" id="cb241">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3287,7 +3303,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_data_options()`:
 ! could not find function "get_default_data_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb239">
+<div class="codewrapper sourceCode" id="cb243">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3299,7 +3315,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'data_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb241">
+<div class="codewrapper sourceCode" id="cb245">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3311,7 +3327,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'data_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb243">
+<div class="codewrapper sourceCode" id="cb247">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3323,7 +3339,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_model_options()`:
 ! could not find function "get_default_model_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb245">
+<div class="codewrapper sourceCode" id="cb249">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3335,7 +3351,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'model_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb247">
+<div class="codewrapper sourceCode" id="cb251">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3347,7 +3363,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error in `get_default_training_options()`:
 ! could not find function "get_default_training_options"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb249">
+<div class="codewrapper sourceCode" id="cb253">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3359,7 +3375,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'train_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb251">
+<div class="codewrapper sourceCode" id="cb255">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3371,7 +3387,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'train_opts' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb253">
+<div class="codewrapper sourceCode" id="cb257">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3387,7 +3403,7 @@ persists even after accounting for sex variation.</p>
 <div class="section level2">
 <h2 id="step-3-build-and-train">Step 3: Build and train<a class="anchor" aria-label="anchor" href="#step-3-build-and-train"></a>
 </h2>
-<div class="codewrapper sourceCode" id="cb255">
+<div class="codewrapper sourceCode" id="cb259">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3404,7 +3420,7 @@ persists even after accounting for sex variation.</p>
 <pre class="error" tabindex="0"><code>Error in `prepare_mofa()`:
 ! could not find function "prepare_mofa"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb257">
+<div class="codewrapper sourceCode" id="cb261">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3426,7 +3442,7 @@ persists even after accounting for sex variation.</p>
 <p>Like in Part 1, after running MOFA we will check variance explained
 by factors and by views. In a grouped analysis we will now also see
 variance explained by group.</p>
-<div class="codewrapper sourceCode" id="cb259">
+<div class="codewrapper sourceCode" id="cb263">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3444,7 +3460,7 @@ Compared to the global analysis, a major difference here is the removal
 of the top factor, which was heavily influenced by sex differences. We
 now observe exercise related factors that are independent of sex
 effects.</p>
-<div class="codewrapper sourceCode" id="cb261">
+<div class="codewrapper sourceCode" id="cb265">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3457,7 +3473,7 @@ effects.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'selected_meta' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb263">
+<div class="codewrapper sourceCode" id="cb267">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3471,7 +3487,7 @@ effects.</p>
 <pre class="error" tabindex="0"><code>Error in `samples_metadata()`:
 ! could not find function "samples_metadata"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb265">
+<div class="codewrapper sourceCode" id="cb269">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3495,7 +3511,7 @@ is correlated with our exercise groups and VO2 max. We can call this our
 ‘Fitness’ factor. To prepare for the downstream analysis we will next
 organize this factor’s data into separate dataframes for samples and
 features.</p>
-<div class="codewrapper sourceCode" id="cb267">
+<div class="codewrapper sourceCode" id="cb271">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3517,7 +3533,7 @@ features.</p>
 <pre class="error" tabindex="0"><code>Error in `get_factors()`:
 ! could not find function "get_factors"</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb269">
+<div class="codewrapper sourceCode" id="cb273">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3531,7 +3547,7 @@ features.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'TRNSCRPT_FEATURE_ANNOT' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb271">
+<div class="codewrapper sourceCode" id="cb275">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3558,7 +3574,7 @@ features.</p>
 the majority of the samples and were not strongly influenced by
 outliers. We will use a scatter plot comparing the sample factor scores
 with VO2 max while calculating their correlation and significance.</p>
-<div class="codewrapper sourceCode" id="cb273">
+<div class="codewrapper sourceCode" id="cb277">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3581,7 +3597,7 @@ with VO2 max while calculating their correlation and significance.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_samples' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb275">
+<div class="codewrapper sourceCode" id="cb279">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3607,7 +3623,7 @@ noise. In contrast, the ‘long tails’ reaching toward the edges of the
 plot represent our primary drivers. These high-magnitude weights
 identify the specific mRNA and proteins with the strongest influence on
 the factor.</p>
-<div class="codewrapper sourceCode" id="cb277">
+<div class="codewrapper sourceCode" id="cb281">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3625,7 +3641,7 @@ the factor.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_weights' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb279">
+<div class="codewrapper sourceCode" id="cb283">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3667,7 +3683,7 @@ statistical drivers, which are the specific molecules responsible for
 the shared variance captured by this factor. We do not expect a strongly
 separated feature responsible as a seed for the covariation, but if we
 saw this we can check if it makes biological sense.</p>
-<div class="codewrapper sourceCode" id="cb281">
+<div class="codewrapper sourceCode" id="cb285">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3694,7 +3710,7 @@ saw this we can check if it makes biological sense.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_weights' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb283">
+<div class="codewrapper sourceCode" id="cb287">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3706,7 +3722,7 @@ saw this we can check if it makes biological sense.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_weights' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb285">
+<div class="codewrapper sourceCode" id="cb289">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3750,7 +3766,7 @@ exactly where the functional adaptation is most concentrated.</p>
 <p>The following code imports <a href="GO:BP" class="uri">GO:BP</a>
 terms, runs the enrichment analysis, and defines a function to visualize
 results based on this hierarchy:</p>
-<div class="codewrapper sourceCode" id="cb287">
+<div class="codewrapper sourceCode" id="cb291">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3769,7 +3785,7 @@ results based on this hierarchy:</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'gmtPathways' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb289">
+<div class="codewrapper sourceCode" id="cb293">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3813,7 +3829,7 @@ results based on this hierarchy:</p>
 <pre class="error" tabindex="0"><code>Error in `FUN()`:
 ! object 'df_weights' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb291">
+<div class="codewrapper sourceCode" id="cb295">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3890,7 +3906,7 @@ summarizing the relationships between terms.</p>
 Enrichment Scores) NES scores for specific high-confidence
 subprocesses—indicating the direction and strength of the exercise
 effect within each neighborhood.</p>
-<div class="codewrapper sourceCode" id="cb292">
+<div class="codewrapper sourceCode" id="cb296">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3903,7 +3919,7 @@ effect within each neighborhood.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'fgsea_results' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb294">
+<div class="codewrapper sourceCode" id="cb298">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3915,7 +3931,7 @@ effect within each neighborhood.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'protein_dotplot' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb296">
+<div class="codewrapper sourceCode" id="cb300">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3928,7 +3944,7 @@ effect within each neighborhood.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'fgsea_results' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb298">
+<div class="codewrapper sourceCode" id="cb302">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3963,7 +3979,7 @@ regulatory offset or temporal lag in some areas, these concordant genes
 represent the core machinery of the training response—the points where
 the cell’s instructions and its physical adaptations are most clearly
 synchronized.</p>
-<div class="codewrapper sourceCode" id="cb300">
+<div class="codewrapper sourceCode" id="cb304">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -3990,7 +4006,7 @@ synchronized.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_weights' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb302">
+<div class="codewrapper sourceCode" id="cb306">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -4008,7 +4024,7 @@ synchronized.</p>
 <pre class="error" tabindex="0"><code>Error:
 ! object 'df_compare' not found</code></pre>
 </div>
-<div class="codewrapper sourceCode" id="cb304">
+<div class="codewrapper sourceCode" id="cb308">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
