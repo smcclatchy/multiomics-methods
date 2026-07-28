@@ -369,13 +369,18 @@ R, we use RStudio.</p>
 Choose the free RStudio Desktop version for Windows, Mac, or
 Linux.</p></li>
 <li><p>Start RStudio.</p></li>
-<li><p>Install R and Bioconductor packages.</p></li>
+<li><p>Install packages from R, Github, and Bioconductor.</p></li>
 </ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"ggrepel"</span>, <span class="st">"devtools"</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu">install.packages</span><span class="op">(</span><span class="fu">c</span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"ggrepel"</span>, <span class="st">"pak"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">pak</span><span class="op">)</span></span>
 <span></span>
+<span><span class="co"># use `pak` to install the MoTrPAC analysis package and data</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu">pkg_install</span><span class="op">(</span><span class="st">"MoTrPAC/MotrpacRatTraining6mo"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># install Bioconductor packages</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw">require</span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span>    <span class="fu">install.packages</span><span class="op">(</span><span class="st">"BiocManager"</span><span class="op">)</span></span>
 <span></span>
@@ -389,7 +394,7 @@ that they installed correctly.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">ggrepel</span><span class="op">)</span></span>
-<span><span class="kw">library</span><span class="op">(</span><span class="va">devtools</span><span class="op">)</span></span>
+<span><span class="kw">library</span><span class="op">(</span><span class="va">MotrpacRatTraining6mo</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">pcaMethods</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">edgeR</span><span class="op">)</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">MOFA2</span><span class="op">)</span></span></code></pre>
@@ -450,7 +455,7 @@ e.g. online setup) in the solutions blocks.</p>
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Use PuTTY</p>
 </div>
@@ -465,7 +470,7 @@ e.g. online setup) in the solutions blocks.</p>
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Use Terminal.app</p>
 </div>
@@ -480,7 +485,7 @@ e.g. online setup) in the solutions blocks.</p>
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Use Terminal</p>
 </div>
