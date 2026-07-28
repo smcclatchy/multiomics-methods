@@ -6,59 +6,25 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- What is multi-omics factor analysis (MOFA)?
+- How is MOFA used?
+- What are the differences between MOFA and PCA?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
-
+- Prepare data and run MOFA using the MOFA2 R package.
+- Interpret variance explained by factor and view.
+- Correlate factors with phenotypes.
+- Determine how many factors to use in an analysis.
+- Run MOFA2 using group variable.
+- Identify a 'Fitness' factor linked to VO2 max.
+- Perform gene set enrichment analysis using factor weights.
+- Identify concordant mRNA and protein drivers of the 'Fitness' factor .
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 # Setting up
-
-::: group-tab
-
-### On your own computer
-
-# Metadata file.
-meta_file = 'data/motrpac_metadata.csv'
-
-# RNA file directory.
-rna_dir   = 'data/rna'
-
-# RNA files.
-rna_files = dir(path = rna_dir, full.names = TRUE)
-
-# Protein file directory.
-prot_dir  = 'data/protein'  
-
-# Protein files.
-prot_files = dir(path = prot_dir, full.names = TRUE)
-
-### On CAVATICA
-
-# Base project directory.
-base_dir  = '/sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-:::
-
-::: group-tab
-
-### On your own computer
-
-4
-
-### On CAVATICA
-
-5
-
-:::
 
 ```{r warning=FALSE, echo=FALSE}
 # Github will not load MotrpacRatTraining6mo because it's too big. Instead,
@@ -297,26 +263,6 @@ identifying factors based on sample-wide covariation rather than gene-to-protein
 correlation. By analyzing the concordant (synchronized) and discordant 
 (divergent) drivers within a factor, we can distinguish between the core genetic 
 programs and the post-translational tuning that ultimately shapes physiology.
-
-:::::::::::::::::::::::::::::::::::::: questions 
-
-- What is multi-omics factor analysis (MOFA)?
-- How is MOFA used?
-- What are the differences between MOFA and PCA?
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::: objectives
-
-- Prepare data and run MOFA using the MOFA2 R package.
-- Interpret variance explained by factor and view.
-- Correlate factors with phenotypes.
-- Determine how many factors to use in an analysis.
-- Run MOFA2 using group variable.
-- Identify a 'Fitness' factor linked to VO2 max.
-- Perform gene set enrichment analysis using factor weights.
-- Identify concordant mRNA and protein drivers of the 'Fitness' factor .
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 # Background & Motivation
 
