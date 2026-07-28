@@ -17,28 +17,61 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+# Setting up
+
+::: group-tab
+
+### On your own computer
+
+# Metadata file.
+meta_file = 'data/motrpac_metadata.csv'
+
+# RNA file directory.
+rna_dir   = 'data/rna'
+
+# RNA files.
+rna_files = dir(path = rna_dir, full.names = TRUE)
+
+# Protein file directory.
+prot_dir  = 'data/protein'  
+
+# Protein files.
+prot_files = dir(path = prot_dir, full.names = TRUE)
+
+### On CAVATICA
+
+# Base project directory.
+base_dir  = '/sbgenomics/workspace'
+
+# Data directory.
+data_dir  = file.path(base_dir, 'data')
+
+:::
+
+::: group-tab
+
+### On your own computer
+
+4
+
+### On CAVATICA
+
+5
+
+:::
 
 ```{r warning=FALSE, echo=FALSE}
-# library(devtools)
-# analysis package
-# devtools::install_github("MoTrPAC/MotrpacRatTraining6mo")
 # Github will not load MotrpacRatTraining6mo because it's too big. Instead,
 # define MotrpacRatTraining6mo functions to get the website to build on Github.
 # the following are adapted from 
 # https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/fetch_prep_data.R#L403
 
-# Base project directory.
-base_dir  = './sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-tissue_abbrev <- load(file.path(data_dir, 'tissue_abbrev.Rdata'))
-assay_abbrev <- load(file.path(data_dir, 'assay_abbrev.Rdata'))
-metab_norm_data_flat <- load(file.path(data_dir, 'metab_norm_data_flat.Rdata'))
-immuno_norm_data_flat <- load(file.path(data_dir, 'immuno_norm_data_flat.Rdata'))
-outliers <- load(file.path(data_dir, 'outliers.Rdata'))
-available_data <- load(file.path(data_dir, 'available_data.Rdata'))
+tissue_abbrev <- load('data/tissue_abbrev.Rdata')
+assay_abbrev <- load('data/assay_abbrev.Rdata')
+metab_norm_data_flat <- load('data/metab_norm_data_flat.Rdata')
+immuno_norm_data_flat <- load('data/immuno_norm_data_flat.Rdata')
+outliers <- load('data/outliers.Rdata')
+available_data <- load('data/available_data.Rdata')
 
 load_sample_data = function(tissue, 
                             assay, 
@@ -173,9 +206,15 @@ load_sample_data = function(tissue,
   
   return(data)
 }
-
 ```
 
+Let's load our R packages:
+
+```{r}
+library(MOFA2)
+library(tidyverse)
+library(edgeR) # use for RNA normalization functions
+```
 
 # Background & Motivation
 
@@ -396,27 +435,6 @@ The `MOFA2` workflow follows a structured four-step pipeline:
 4.  **Downstream Analysis:** Visualizing the shared and private biological signals.
 :::
 
-# Setting up the Data
-
-Let's load our R packages:
-
-```{r}
-#| warning: false
-#| message: false
-
-library(reticulate)
-use_python("/usr/bin/python3", required = TRUE)
-
-# check that python mofapy2 package is installed
-py_module_available("mofapy2")
-
-# library(MotrpacRatTraining6mo)
-library(MOFA2)
-library(tidyverse)
-library(edgeR) # use for RNA normalization functions
-
-```
-
 Let's load our samples:
 
 For this analysis, we will only include high-quality matched pairs (samples with 
@@ -424,46 +442,7 @@ both RNA and protein data). For RNA, raw counts will be loaded and we will
 normalize the samples and perform a log transformation. For protein, complete 
 normalized data with imputed values will be loaded.
 
-::: group-tab
 
-### On your own computer
-
-# Metadata file.
-meta_file = 'data/motrpac_metadata.csv'
-
-# RNA file directory.
-rna_dir   = 'data/rna'
-
-# RNA files.
-rna_files = dir(path = rna_dir, full.names = TRUE)
-
-# Protein file directory.
-prot_dir  = 'data/protein'  
-
-# Protein files.
-prot_files = dir(path = prot_dir, full.names = TRUE)
-
-### On CAVATICA
-
-# Base project directory.
-base_dir  = '/sbgenomics/workspace'
-
-# Data directory.
-data_dir  = file.path(base_dir, 'data')
-
-:::
-
-::: group-tab
-
-### On your own computer
-
-4
-
-### On CAVATICA
-
-5
-
-:::
 
 ```{r}
 #| warning: false
