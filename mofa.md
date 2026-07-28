@@ -301,10 +301,13 @@ rna_data <- load_sample_data(this_tissue, "TRNSCRPT",
                              normalized=FALSE, exclude_outliers=TRUE)
 ```
 
+``` output
+TRNSCRPT_SKMGN_RAW_COUNTS
+```
+
 ``` error
-Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV: 
- tissue_abbrev
+Error in `get()`:
+! object 'TRNSCRPT_SKMGN_RAW_COUNTS' not found
 ```
 
 ``` r
@@ -414,10 +417,13 @@ prot_data <- load_sample_data(this_tissue, "PROT",
                   normalized=TRUE, exclude_outliers=TRUE)
 ```
 
+``` output
+PROT_SKMGN_NORM_DATA
+```
+
 ``` error
-Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV: 
- tissue_abbrev
+Error in `get()`:
+! object 'PROT_SKMGN_NORM_DATA' not found
 ```
 
 ``` r
@@ -590,9 +596,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1528529 81.7    2729888 145.8  2729888 145.8
-Vcells 2850791 21.8    8388608  64.0  4338843  33.2
+          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1535873 82.1    2750734  147  2750734 147.0
+Vcells 3803276 29.1    8388608   64  5332624  40.7
 ```
 
 # Feature Selection
@@ -1111,10 +1117,13 @@ rna_data <- load_sample_data(this_tissue, "TRNSCRPT",
                              normalized=FALSE, exclude_outliers=TRUE)
 ```
 
+``` output
+TRNSCRPT_SKMGN_RAW_COUNTS
+```
+
 ``` error
-Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV: 
- tissue_abbrev
+Error in `get()`:
+! object 'TRNSCRPT_SKMGN_RAW_COUNTS' not found
 ```
 
 ``` r
@@ -1224,10 +1233,13 @@ prot_data <- load_sample_data(this_tissue, "PROT",
                   normalized=TRUE, exclude_outliers=TRUE)
 ```
 
+``` output
+PROT_SKMGN_NORM_DATA
+```
+
 ``` error
-Error in `load_sample_data()`:
-! 'tissue' must be one of TISSUE_ABBREV: 
- tissue_abbrev
+Error in `get()`:
+! object 'PROT_SKMGN_NORM_DATA' not found
 ```
 
 ``` r
@@ -1400,9 +1412,9 @@ gc()
 ```
 
 ``` output
-          used (Mb) gc trigger  (Mb) max used  (Mb)
-Ncells 1599041 85.4    2729888 145.8  2729888 145.8
-Vcells 2973944 22.7    8388608  64.0  4338843  33.2
+          used (Mb) gc trigger (Mb) max used  (Mb)
+Ncells 1606388 85.8    2750734  147  2750734 147.0
+Vcells 3926473 30.0    8388608   64  5332624  40.7
 ```
 
 # Feature Selection
