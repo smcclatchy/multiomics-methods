@@ -685,8 +685,8 @@ gc()
 
 ``` output
           used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1528513 81.7    2788788  149  2788788 149.0
-Vcells 2851092 21.8    8388608   64  4602600  35.2
+Ncells 1528513 81.7    2788160  149  2788160 149.0
+Vcells 2851092 21.8    8388608   64  4603175  35.2
 ```
 
 # Feature Selection
@@ -1493,8 +1493,8 @@ gc()
 
 ``` output
           used (Mb) gc trigger (Mb) max used  (Mb)
-Ncells 1599019 85.4    2788788  149  2788788 149.0
-Vcells 2974226 22.7    8388608   64  4602600  35.2
+Ncells 1599019 85.4    2788160  149  2788160 149.0
+Vcells 2974226 22.7    8388608   64  4603175  35.2
 ```
 
 # Feature Selection
