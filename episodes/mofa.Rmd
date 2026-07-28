@@ -32,12 +32,12 @@ exercises: 2
 # the following are adapted from 
 # https://github.com/MoTrPAC/MotrpacRatTraining6mo/blob/bea2ab1120c0bc0a4f4aa9602e93ecf5685e54fb/R/fetch_prep_data.R#L403
 
-tissue_abbrev <- load('data/tissue_abbrev.Rdata')
-assay_abbrev <- load('data/assay_abbrev.Rdata')
-metab_norm_data_flat <- load('data/metab_norm_data_flat.Rdata')
-immuno_norm_data_flat <- load('data/immuno_norm_data_flat.Rdata')
-outliers <- load('data/outliers.Rdata')
-available_data <- load('data/available_data.Rdata')
+load('data/TISSUE_ABBREV.rda')
+load('data/ASSAY_ABBREV.rda')
+load('data/METAB_NORM_DATA_FLAT.rda')
+load('data/IMMUNO_NORM_DATA_FLAT.rda')
+load('data/OUTLIERS.rda')
+load('data/AVAILABLE_DATA.rda')
 
 load_sample_data = function(tissue, 
                             assay, 
@@ -49,13 +49,13 @@ load_sample_data = function(tissue,
                             warnings = TRUE){
   
   # check inputs 
-  if(!tissue %in% tissue_abbrev){
+  if(!tissue %in% TISSUE_ABBREV){
     stop(sprintf("'tissue' must be one of TISSUE_ABBREV: \n %s", 
-                 paste(tissue_abbrev, collapse=", ")))
+                 paste(TISSUE_ABBREV, collapse=", ")))
   }
-  if(!assay %in% assay_abbrev){
+  if(!assay %in% ASSAY_ABBREV){
     stop(sprintf("'assay' must be one of ASSAY_ABBREV: \n %s", 
-                 paste(assay_abbrev, collapse=", ")))
+                 paste(ASSAY_ABBREV, collapse=", ")))
   }
   
   # add available epigen data
@@ -69,11 +69,7 @@ load_sample_data = function(tissue,
     'SKMGN',
     'WATSC'
   )
-  # norm data 
-  available_data = c(available_data, paste0(rep(c("ATAC", "METHYL"), each=8), "_", rep(possible_tissues,2), "_NORM_DATA"))
-  # counts
-  available_data = c(available_data, paste0(rep(c("ATAC", "METHYL"), each=8), "_", rep(possible_tissues,2), "_RAW_COUNTS"))
-  
+
   data = NULL
   if(normalized){
     # normalized data
@@ -82,7 +78,7 @@ load_sample_data = function(tissue,
         obj_name = sprintf("%s_%s_NORM_DATA_05FDR", assay, gsub("-","",tissue))
         if(obj_name %in% available_data){
           message(obj_name)
-          data = .get(obj_name)
+          data = get(obj_name)
         }
       }else{
         # download from GCS
@@ -95,7 +91,7 @@ load_sample_data = function(tissue,
     }else if(assay == "METAB"){
       # get combined sample-level data
       message(sprintf("METAB %s normalized data from METAB_NORM_DATA_FLAT", tissue))
-      data = metab_norm_data_flat
+      data = METAB_NORM_DATA_FLAT
       # filter to this tissue
       data = data[data$tissue == tissue,]
       # remove all-NA columns 
@@ -103,7 +99,7 @@ load_sample_data = function(tissue,
     }else if(assay == "IMMUNO"){
       # get combined sample-level data
       message(sprintf("IMMUNO %s normalized data from IMMUNO_NORM_DATA_FLAT", tissue))
-      data = immuno_norm_data_flat
+      data = IMMUNO_NORM_DATA_FLAT
       # filter to this tissue
       data = data[data$tissue == tissue,]
       # remove all-NA columns 
@@ -112,7 +108,7 @@ load_sample_data = function(tissue,
       obj_name = sprintf("%s_%s_NORM_DATA", assay, gsub("-","",tissue))
       if(obj_name %in% available_data){
         message(obj_name)
-        data = .get(obj_name)
+        data = get(obj_name)
       }
     }
   }else{
@@ -129,7 +125,7 @@ load_sample_data = function(tissue,
         obj_name = sprintf("%s_%s_RAW_COUNTS", assay, gsub("-","",tissue))
         if(obj_name %in% available_data){
           message(obj_name)
-          data = .get(obj_name)
+          data = get(obj_name)
         }
       }
     }else{
@@ -157,12 +153,12 @@ load_sample_data = function(tissue,
     }
   }
   if(exclude_outliers){
-    outliers = data.table::data.table(outliers)
+    OUTLIERS = data.table::data.table(OUTLIERS)
     .assay = assay
     .tissue = tissue
-    curr_outliers = stats::na.omit(outliers[assay == .assay & tissue == .tissue, viallabel])
+    curr_outliers = stats::na.omit(OUTLIERS[assay == .assay & tissue == .tissue, viallabel])
     if(.tissue == "VENACV"){
-      curr_outliers = c(curr_outliers, na.omit(outliers[tissue == .tissue, viallabel]))
+      curr_outliers = c(curr_outliers, na.omit(OUTLIERS[tissue == .tissue, viallabel]))
     }
     curr_outliers = unique(curr_outliers)
     if(length(curr_outliers)>0){
