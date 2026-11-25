@@ -176,6 +176,7 @@ Let's load our R packages:
 library(MOFA2)
 library(tidyverse)
 library(edgeR) # use for RNA normalization functions
+library(MotrpacRatTraining6moData)
 ```
 
 # Background & Motivation
